@@ -10,6 +10,7 @@ import Movie from '../models/Movie';
 export class MoviesComponent implements OnInit {
 
   popularMovies: Array<Movie>;
+  inTheaterMovies: Array<Movie>;
   singleMovie: Movie;
 
   constructor(private movieService: MovieService) { }
@@ -18,6 +19,9 @@ export class MoviesComponent implements OnInit {
     this.movieService.getPopularMovies().subscribe(data => {
       this.popularMovies = data['results'].slice(0, 4);
       this.singleMovie = this.popularMovies[0];
+    });
+    this.movieService.getInTheaterMovies().subscribe(data => {
+      this.inTheaterMovies = data['results'].slice(10, 14);
     });
   }
 
