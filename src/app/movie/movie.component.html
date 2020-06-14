@@ -8,7 +8,8 @@
   </div>
   
   <div class="card-footer text-muted">
-    <button id="{{movie.id}}" class="btn btn-primary" (click)="onBtnCLick()">View details</button>
+    <a id="{{movie.id}}" class="btn btn-primary" [routerLink]="[ '/movies', movie.id]">View details</a>
   </div>
 
 </div>
+

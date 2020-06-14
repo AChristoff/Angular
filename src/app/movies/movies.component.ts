@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {MovieService} from '../services/movie.service';
 import Movie from '../models/Movie';
+import {Subscription} from 'rxjs';
 
 @Component({
   selector: 'app-movies',
@@ -9,20 +10,24 @@ import Movie from '../models/Movie';
 })
 export class MoviesComponent implements OnInit {
 
-  popularMovies: Array<Movie>;
-  inTheaterMovies: Array<Movie>;
-  singleMovie: Movie;
+  popularMovies: Movie[];
+  popMovSub: Subscription;
+  inTheaterMovies: Movie[];
+  upcomingMovies: Movie[];
   message: null;
 
   constructor(private movieService: MovieService) { }
 
   ngOnInit(): void {
-    this.movieService.getPopularMovies().subscribe(data => {
-      this.popularMovies = data['results'].slice(0, 4);
-      this.singleMovie = this.popularMovies[0];
+    this.popMovSub = this.movieService.getPopularMovies().subscribe(data => {
+      this.popularMovies = data;
     });
     this.movieService.getInTheaterMovies().subscribe(data => {
-      this.inTheaterMovies = data['results'].slice(10, 14);
+      this.inTheaterMovies = data;
+    });
+    this.movieService.getUpcomingMovies().subscribe(data => {
+      this.upcomingMovies = data;
+      console.log(data);
     });
   }
 
