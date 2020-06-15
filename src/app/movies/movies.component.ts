@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {MovieService} from '../services/movie.service';
 import Movie from '../models/Movie';
 import {Subscription} from 'rxjs';
+import {ActivatedRoute} from '@angular/router';
+import {MovieListResolver} from '../services/resolvers/movie-list.resolver';
 
 @Component({
   selector: 'app-movies',
@@ -11,23 +13,21 @@ import {Subscription} from 'rxjs';
 export class MoviesComponent implements OnInit {
 
   popularMovies: Movie[];
-  popMovSub: Subscription;
   inTheaterMovies: Movie[];
   upcomingMovies: Movie[];
   message: null;
 
-  constructor(private movieService: MovieService) { }
+  constructor(
+    private movieService: MovieService,
+    private route: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
-    this.popMovSub = this.movieService.getPopularMovies().subscribe(data => {
-      this.popularMovies = data;
-    });
-    this.movieService.getInTheaterMovies().subscribe(data => {
-      this.inTheaterMovies = data;
-    });
-    this.movieService.getUpcomingMovies().subscribe(data => {
-      this.upcomingMovies = data;
-    });
+    const [theater, popular, upcoming] = this.route.snapshot.data.MovieListResolver;
+
+    this.popularMovies = popular;
+    this.inTheaterMovies = theater;
+    this.upcomingMovies = upcoming;
   }
 
   fromChild(eventData) {

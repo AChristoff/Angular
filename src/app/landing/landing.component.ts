@@ -20,7 +20,7 @@ export class LandingComponent implements OnInit {
 
   search() {
     const query = this.searchForm.value.query;
-    this.router.navigate(['/movies/search'], {queryParams: {search:  query}});
+    this.router.navigate(['/movies/search'], {queryParams: {search: query}});
   }
 
 }

@@ -14,6 +14,7 @@ import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
 import {SingleMovieResolver} from './services/resolvers/single-movie.resolver';
 import {FormsModule} from '@angular/forms';
+import {MovieListResolver} from './services/resolvers/movie-list.resolver';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,7 @@ import {FormsModule} from '@angular/forms';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [MovieService, SingleMovieResolver],
+  providers: [MovieService, SingleMovieResolver, MovieListResolver],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
