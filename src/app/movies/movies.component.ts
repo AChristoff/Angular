@@ -18,7 +18,6 @@ export class MoviesComponent implements OnInit {
   message: null;
 
   constructor(
-    private movieService: MovieService,
     private route: ActivatedRoute) {
   }
 
