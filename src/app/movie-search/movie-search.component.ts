@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import Movie from '../models/Movie';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, Params} from '@angular/router';
 import {MovieService} from '../services/movie.service';
 
 @Component({
@@ -10,6 +10,7 @@ import {MovieService} from '../services/movie.service';
 })
 export class MovieSearchComponent implements OnInit {
   searchedMovies: Movie[];
+  query: string;
 
   constructor(
     private movieService: MovieService,
@@ -18,10 +19,12 @@ export class MovieSearchComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const query = this.route.snapshot.queryParams['search'];
-    this.movieService.searchMovie(query)
-      .subscribe((data) => {
-        this.searchedMovies = data['results'];
-      });
+    this.route.queryParams.subscribe((params: Params) => {
+      this.query = params['search'];
+      this.movieService.searchMovie(this.query)
+        .subscribe((data) => {
+          this.searchedMovies = data['results'];
+        });
+    });
   }
 }
