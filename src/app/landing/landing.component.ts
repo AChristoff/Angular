@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {NgForm} from '@angular/forms';
+import Movie from '../models/Movie';
+import {MovieService} from '../services/movie.service';
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild('form') searchForm: NgForm;
+  searchedMovies: Movie[];
+
+  constructor(private movieService: MovieService) {
+  }
 
   ngOnInit(): void {
+  }
+
+  search() {
+    const query = this.searchForm.value.query;
+    this.movieService.searchMovie(query)
+      .subscribe((data) => {
+        this.searchedMovies = data['results'];
+      });
   }
 
 }

@@ -5,6 +5,7 @@ import Movie from '../models/Movie';
 import {map} from 'rxjs/operators';
 import {MovieDetailsComponent} from '../movie-details/movie-details.component';
 import MovieDetails from '../models/Movie-Details';
+import {query} from '@angular/animations';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
 const API_KEY = '?api_key=2e3c24fc938f2e5361bd46f6197c37d6';
@@ -40,5 +41,9 @@ export class MovieService {
 
   getMovieById(id: string): Observable<MovieDetails> {
     return this.http.get<MovieDetails>(BASE_URL + `/movie/${id}` + API_KEY);
+  }
+
+  searchMovie(query: string) {
+    return this.http.get<Movie[]>(BASE_URL + '/search/movie' + API_KEY + `&query=${query}`);
   }
 }

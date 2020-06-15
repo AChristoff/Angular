@@ -12,6 +12,8 @@ import { MovieComponent } from './movie/movie.component';
 import { FooterComponent } from './footer/footer.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import {SingleMovieResolver} from './services/resolvers/single-movie.resolver';
+import {FormsModule} from '@angular/forms';
+import { MovieSearchComponent } from './movie-search/movie-search.component';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import {SingleMovieResolver} from './services/resolvers/single-movie.resolver';
     MovieComponent,
     FooterComponent,
     MovieDetailsComponent,
+    MovieSearchComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [MovieService, SingleMovieResolver],
   bootstrap: [AppComponent],
