@@ -19,9 +19,9 @@ export class MovieService {
   constructor(private http: HttpClient) { }
 
   getPopularMovies(): Observable<Movie[]> {
-    return this.http.get<Movie[]>(BASE_URL + '/movie/popular' + API_KEY)
+    return this.http.get<Movie[]>(BASE_URL + '/movie/popular' + API_KEY + '&language=en-US&page=1')
       .pipe(
-        map((data) => data['results'].slice(0, 4))
+        map((data) => data['results'].slice(1, 5))
       );
   }
 
