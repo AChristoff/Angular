@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-register',
@@ -7,9 +7,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  constructor() { }
+  phoneCodes: Array<string> = [
+    '+359', '+971', '+701', '+44'
+  ];
+
+  jobTitles: Array<string> = [
+    'Designer', 'Manager', 'Accounting'
+  ];
+
+  constructor() {
+  }
 
   ngOnInit(): void {
+  }
+
+  onRegister(data) {
+    console.log(data);
   }
 
 }
