@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
   ];
 
   jobTitles: Array<string> = [
-    'Designer', 'Manager', 'Accounting'
+    'Designer', 'Manager', 'Developer', 'Accounting', 'Other'
   ];
 
   constructor() {
