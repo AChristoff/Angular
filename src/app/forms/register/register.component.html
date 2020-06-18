@@ -3,7 +3,7 @@
     <div class="col-lg-4"></div>
     <div class="col-lg-4">
       <h1>Registration Form</h1>
-      <form #regForm="ngForm" (submit)="onRegister(regForm.controls.passwords.controls)">
+      <form #regForm="ngForm" (submit)="onRegister(regForm.controls.userPasswords['controls'])">
         <pre>{{ regForm.value | json }}</pre>
         <div class="form-group input-group">
           <div class="input-group-prepend">
@@ -63,7 +63,7 @@
         </div>
         <div class="alert alert-danger" *ngIf="regForm.controls.jobTitle?.touched && regForm.controls.jobTitle.errors?.required">This field is required</div>
         
-        <div ngModelGroup="passwords">
+        <div ngModelGroup="userPasswords">
           <div class="form-group input-group">
             <div class="input-group-prepend">
               <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
@@ -75,7 +75,7 @@
                    required
                    name="password">
           </div>
-          <div class="alert alert-danger" *ngIf="regForm.controls.passwords?.controls.password?.touched && regForm.controls.passwords?.controls.password.errors?.required">Password is required</div>
+          <div class="alert alert-danger" *ngIf="regForm.controls.userPasswords['controls']?.password?.touched && regForm.controls?.userPasswords['controls']?.password?.errors?.required">Password is required</div>
           
           
           <div class="form-group input-group">
@@ -89,14 +89,14 @@
                    required
                    name="confirmPassword">
           </div>
-          <div class="alert alert-danger" *ngIf="regForm.controls.passwords?.controls.confirmPassword?.touched && regForm.controls.passwords?.controls.confirmPassword.errors?.required">Password is required</div>
-          <div class="alert alert-danger" *ngIf="regForm.controls.passwords?.controls.password?.touched && (regForm.controls.passwords?.controls.password?.value !== regForm.controls.passwords?.controls.confirmPassword?.value)">Passwords no not match!</div>
+          <div class="alert alert-danger" *ngIf="regForm.controls.userPasswords['controls']['confirmPassword']?.touched && regForm.controls.userPasswords['controls']['confirmPassword']?.errors?.required">Password is required</div>
+          <div class="alert alert-danger" *ngIf="regForm.controls.userPasswords['controls']?.password?.touched && (regForm.controls.userPasswords['controls']?.password?.value !== regForm.controls.userPasswords['controls']?.confirmPassword?.value)">Passwords no not match!</div>
         </div>
         
         <div class="form-group">
           <button type="submit"
                   class="btn btn-primary btn-block"
-                  [disabled]="(regForm.controls.passwords?.controls.password?.value !== regForm.controls.passwords?.controls.confirmPassword?.value) || regForm.invalid"> Create Account
+                  [disabled]="(regForm.controls.userPasswords['controls']['password']?.value !== regForm.controls.userPasswords['controls']['confirmPassword']?.value) || regForm.invalid"> Create Account
           </button>
         </div>
         <p class="text-center">Have an account? <a href="">Log In</a></p>
