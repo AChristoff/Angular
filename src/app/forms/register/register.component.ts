@@ -1,4 +1,5 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
+import {NgForm} from '@angular/forms';
 
 @Component({
   selector: 'app-register',
@@ -15,14 +16,18 @@ export class RegisterComponent implements OnInit {
     'Designer', 'Manager', 'Developer', 'Accounting', 'Other'
   ];
 
+  @ViewChild('regForm')
+  form: NgForm;
+
   constructor() {
   }
-
   ngOnInit(): void {
   }
 
   onRegister(data) {
     console.log(data);
+    console.log(this.form);
+    this.form?.reset();
   }
 
 }
