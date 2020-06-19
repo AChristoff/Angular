@@ -79,6 +79,11 @@
              *ngIf="f.password.touched && f.password.errors?.required">
           This field is required
         </div>
+        <div class="alert alert-danger"
+             *ngIf="f.password.touched && f.password.errors?.pattern">
+          Password must be between 6-40 chars and contain at least one: uppercase / lowercase / special char / digit
+        </div>
+        
         
         <div class="form-group input-group">
           <div class="input-group-prepend">
