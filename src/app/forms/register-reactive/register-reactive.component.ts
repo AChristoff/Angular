@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
+import {CustomValidationService} from '../../services/custom-validation.service';
 
 @Component({
   selector: 'app-register-reactive',
@@ -9,26 +10,46 @@ import {FormBuilder, Validators} from '@angular/forms';
 export class RegisterReactiveComponent implements OnInit {
   form;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private customValidator: CustomValidationService
+  ) {
   }
 
   ngOnInit(): void {
-    this.form = this.fb.group({
-      fullName: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(/[A-Z][a-z]+\s[A-Z][a-z]+/)
-        ]
-      ],
-      email: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
-        ]
-      ],
-    });
+    this.form = this.fb.group(
+      {
+        fullName: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern(/[A-Z][a-z]+\s[A-Z][a-z]+/)
+          ]
+        ],
+        email: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)
+          ]
+        ],
+        password: [
+          '',
+          [
+            Validators.required,
+          ]
+        ],
+        confirmPassword: [
+          '',
+          [
+            Validators.required,
+          ]
+        ],
+      },
+      {
+        validator: this.customValidator.passwordMatchValidator('password', 'confirmPassword')
+      }
+    );
   }
 
   onRegister() {
