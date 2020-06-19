@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
 
   @ViewChild('regForm')
   form: NgForm;
+  formData = {};
 
   constructor() {
   }
@@ -25,8 +26,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onRegister(data) {
-    console.log(data);
-    console.log(this.form);
+    console.log(this.formData);
     this.form?.reset();
   }
 

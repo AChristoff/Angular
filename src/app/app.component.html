@@ -1,6 +1,6 @@
 <app-navbar></app-navbar>
 
-<app-landing *ngIf="router.url !== '/register'"></app-landing>
+<app-landing *ngIf="router.url === '/movies'"></app-landing>
 <router-outlet></router-outlet>
 
 <app-footer></app-footer>

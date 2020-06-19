@@ -6,6 +6,7 @@ import {SingleMovieResolver} from './services/resolvers/single-movie.resolver';
 import {MovieSearchComponent} from './movie-search/movie-search.component';
 import {MovieListResolver} from './services/resolvers/movie-list.resolver';
 import {RegisterComponent} from './forms/register/register.component';
+import {RegisterReactiveComponent} from './forms/register-reactive/register-reactive.component';
 
 
 const routes: Routes = [
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent,
+  },
+  {
+    path: 'register-reactive',
+    component: RegisterReactiveComponent,
   },
 ];
 

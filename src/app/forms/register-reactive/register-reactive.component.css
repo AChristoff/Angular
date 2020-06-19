@@ -1,0 +1,7 @@
+.form-container {
+  margin: 4em auto;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}

@@ -13,9 +13,10 @@ import { FooterComponent } from './footer/footer.component';
 import { MovieDetailsComponent } from './movie-details/movie-details.component';
 import { MovieSearchComponent } from './movie-search/movie-search.component';
 import {SingleMovieResolver} from './services/resolvers/single-movie.resolver';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MovieListResolver} from './services/resolvers/movie-list.resolver';
 import { RegisterComponent } from './forms/register/register.component';
+import { RegisterReactiveComponent } from './forms/register-reactive/register-reactive.component';
 
 @NgModule({
   declarations: [
@@ -28,12 +29,14 @@ import { RegisterComponent } from './forms/register/register.component';
     MovieDetailsComponent,
     MovieSearchComponent,
     RegisterComponent,
+    RegisterReactiveComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule
   ],
   providers: [MovieService, SingleMovieResolver, MovieListResolver],
   bootstrap: [AppComponent],
