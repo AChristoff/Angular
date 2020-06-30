@@ -27,6 +27,7 @@ export class AuthService {
   }
 
   getToken() {
-    return localStorage.getItem('token');
+    let token = localStorage.getItem('token');
+    return token;
   }
 }

@@ -52,7 +52,7 @@ import {FurnitureUserComponent} from './furniture/furniture-user/furniture-user.
   providers: [
     AuthService,
     FurnitureService,
-    {provide: [HTTP_INTERCEPTORS], useClass: JwtInterceptorService, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true},
   ],
   bootstrap: [AppComponent]
 })
