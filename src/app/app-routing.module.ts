@@ -1,47 +1,20 @@
-import {NgModule} from '@angular/core';
-import {Routes, RouterModule} from '@angular/router';
-import {MoviesComponent} from './movies/movies.component';
-import {MovieDetailsComponent} from './movie-details/movie-details.component';
-import {SingleMovieResolver} from './services/resolvers/single-movie.resolver';
-import {MovieSearchComponent} from './movie-search/movie-search.component';
-import {MovieListResolver} from './services/resolvers/movie-list.resolver';
-import {RegisterComponent} from './forms/register/register.component';
-import {RegisterReactiveComponent} from './forms/register-reactive/register-reactive.component';
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
+// Components
+import { HomeComponent } from './home/home.component';
+import { SigninComponent } from './authentication/signin/signin.component';
+import { SignupComponent } from './authentication/signup/signup.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'movies'
-  },
-  {
-    path: 'movies',
-    component: MoviesComponent,
-    resolve: {MovieListResolver},
-  },
-  {
-    path: 'movies/search',
-    component: MovieSearchComponent,
-  },
-  {
-    path: 'movies/:id',
-    component: MovieDetailsComponent,
-    resolve: {SingleMovieResolver},
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-  },
-  {
-    path: 'register-reactive',
-    component: RegisterReactiveComponent,
-  },
-];
+  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  { path: 'home', component: HomeComponent },
+  { path: 'signin', component: SigninComponent },
+  { path: 'signup', component: SignupComponent }
+]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule { }

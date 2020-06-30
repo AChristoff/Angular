@@ -1,44 +1,38 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { BrowserModule } from '@angular/platform-browser';
+
+import { AppComponent } from './app.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { SigninComponent } from './authentication/signin/signin.component';
+import { SignupComponent } from './authentication/signup/signup.component';
+import { HomeComponent } from './home/home.component';
+import { DropdownDirective } from './navigation/dropdown.directive';
+import { CollapseDirective } from './navigation/collapse.directive';
 
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { LandingComponent } from './landing/landing.component';
-import { MoviesComponent } from './movies/movies.component';
-import {MovieService} from './services/movie.service';
-import {HttpClientModule} from '@angular/common/http';
-import { MovieComponent } from './movie/movie.component';
-import { FooterComponent } from './footer/footer.component';
-import { MovieDetailsComponent } from './movie-details/movie-details.component';
-import { MovieSearchComponent } from './movie-search/movie-search.component';
-import {SingleMovieResolver} from './services/resolvers/single-movie.resolver';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MovieListResolver} from './services/resolvers/movie-list.resolver';
-import { RegisterComponent } from './forms/register/register.component';
-import { RegisterReactiveComponent } from './forms/register-reactive/register-reactive.component';
+import { AuthService } from './authentication/auth.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavbarComponent,
-    LandingComponent,
-    MoviesComponent,
-    MovieComponent,
-    FooterComponent,
-    MovieDetailsComponent,
-    MovieSearchComponent,
-    RegisterComponent,
-    RegisterReactiveComponent,
+    NavigationComponent,
+    SigninComponent,
+    SignupComponent,
+    HomeComponent,
+    DropdownDirective,
+    CollapseDirective
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [MovieService, SingleMovieResolver, MovieListResolver],
-  bootstrap: [AppComponent],
+  providers: [ 
+    AuthService
+  ],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
