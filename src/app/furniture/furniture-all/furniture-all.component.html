@@ -6,17 +6,18 @@
     </div>
   </div>
   <div class="row space-top">
-    <div class="col-md-4">
+    <div class="col-md-4" *ngFor="let f of furniture$ | async">
       <div class="card text-white bg-primary">
         <div class="card-body">
           <blockquote class="card-blockquote">
-            <img src="imageUrl" />
-            <p>Description here</p>
+            <img src="{{f.image}}" alt="{{f.make}}"/>
+            <p>{{f.description}}</p>
             <footer>Someone famous in
               <cite title="Source Title">Source Title</cite>
             </footer>
             <div class="pull-right">
-              <a href=”#” class="btn btn-info">Details</a>
+                             <!--/furniture/details/:id'-->
+              <a [routerLink]="['/furniture/details', f._id]" class="btn btn-info">Details</a>
             </div>
           </blockquote>
         </div>
