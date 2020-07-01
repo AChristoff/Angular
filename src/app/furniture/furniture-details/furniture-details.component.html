@@ -20,7 +20,7 @@
       <p>Year: {{furniture.year}}</p>
       <p>Description: {{furniture.description}}</p>
       <p>Price: {{furniture.price}}</p>
-      <p>Material: {{furniture.material}}</p>
+      <p *ngIf="furniture.material">Material: {{furniture.material}}</p>
     </div>
   </div>
 </div>

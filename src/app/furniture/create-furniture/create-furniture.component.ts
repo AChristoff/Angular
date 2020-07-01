@@ -30,7 +30,7 @@ export class CreateFurnitureComponent implements OnInit {
   }
 
   createFurniture() {
-    this.furnitureService.createFurniture(this.form.value).subscribe((data) => {
+    this.furnitureService.createFurniture(this.form.value).subscribe(() => {
       this.router.navigate(['/furniture/all']);
     });
   }
