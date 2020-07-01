@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FurnitureService} from '../furniture.service';
 import {Observable} from 'rxjs';
 import {Furniture} from '../../models/furniture';
@@ -10,15 +10,18 @@ import {Furniture} from '../../models/furniture';
 })
 export class FurnitureUserComponent implements OnInit {
   userFurniture$: Observable<Furniture[]>;
-  constructor(private furnitureService: FurnitureService) { }
+
+  constructor(private furnitureService: FurnitureService) {
+  }
 
   ngOnInit() {
-   this.userFurniture$ = this.furnitureService.getUserFurniture();
+    this.userFurniture$ = this.furnitureService.getUserFurniture();
   }
 
   deleteFurniture(id) {
-    this.furnitureService.deleteFurniture(id);
-    this.userFurniture$ = this.furnitureService.getUserFurniture();
+    this.furnitureService.deleteFurniture(id).subscribe(() => {
+      this.userFurniture$ = this.furnitureService.getUserFurniture();
+    });
   }
 
 }
