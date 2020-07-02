@@ -1,5 +1,5 @@
 import {NgModule} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -16,16 +16,10 @@ import {CollapseDirective} from './navigation/collapse.directive';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AuthService} from './authentication/auth.service';
-import {FurnitureService} from './furniture/furniture.service';
 import {JwtInterceptorService} from './interceptors/jwt-interceptor.service';
 import {ResponseInterceptorService} from './interceptors/response-interceptor.service';
 
 import {ToastrModule} from 'ngx-toastr';
-
-import {CreateFurnitureComponent} from './furniture/create-furniture/create-furniture.component';
-import {FurnitureAllComponent} from './furniture/furniture-all/furniture-all.component';
-import {FurnitureDetailsComponent} from './furniture/furniture-details/furniture-details.component';
-import {FurnitureUserComponent} from './furniture/furniture-user/furniture-user.component';
 
 @NgModule({
   declarations: [
@@ -36,23 +30,17 @@ import {FurnitureUserComponent} from './furniture/furniture-user/furniture-user.
     HomeComponent,
     DropdownDirective,
     CollapseDirective,
-    FurnitureAllComponent,
-    CreateFurnitureComponent,
-    FurnitureDetailsComponent,
-    FurnitureUserComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule,
     AppRoutingModule,
     HttpClientModule,
     ToastrModule.forRoot(),
   ],
   providers: [
     AuthService,
-    FurnitureService,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true},
     {provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptorService, multi: true},
   ],

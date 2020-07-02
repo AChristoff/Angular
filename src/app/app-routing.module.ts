@@ -5,10 +5,6 @@ import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {SigninComponent} from './authentication/signin/signin.component';
 import {SignupComponent} from './authentication/signup/signup.component';
-import {CreateFurnitureComponent} from './furniture/create-furniture/create-furniture.component';
-import {FurnitureAllComponent} from './furniture/furniture-all/furniture-all.component';
-import {FurnitureDetailsComponent} from './furniture/furniture-details/furniture-details.component';
-import {FurnitureUserComponent} from './furniture/furniture-user/furniture-user.component';
 import {AuthGuard} from './authentication/guards/auth.guard';
 
 const routes: Routes = [
@@ -16,10 +12,7 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'signin', component: SigninComponent},
   {path: 'signup', component: SignupComponent},
-  {path: 'furniture/create', component: CreateFurnitureComponent, canActivate: [AuthGuard]},
-  {path: 'furniture/all', component: FurnitureAllComponent, canActivate: [AuthGuard]},
-  {path: 'furniture/details/:id', component: FurnitureDetailsComponent, canActivate: [AuthGuard]},
-  {path: 'furniture/user', component: FurnitureUserComponent, canActivate: [AuthGuard]},
+  {path: 'furniture', loadChildren: './furniture/furniture-module/furniture-module.module#FurnitureModuleModule', canActivate: [AuthGuard]}
 ];
 
 @NgModule({
