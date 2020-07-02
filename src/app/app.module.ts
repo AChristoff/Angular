@@ -16,8 +16,9 @@ import {CollapseDirective} from './navigation/collapse.directive';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AuthService} from './authentication/auth.service';
-import {JwtInterceptorService} from './interceptors/jwt-interceptor.service';
 import {FurnitureService} from './furniture/furniture.service';
+import {JwtInterceptorService} from './interceptors/jwt-interceptor.service';
+import {ResponseInterceptorService} from './interceptors/response-interceptor.service';
 
 import {ToastrModule} from 'ngx-toastr';
 
@@ -53,6 +54,7 @@ import {FurnitureUserComponent} from './furniture/furniture-user/furniture-user.
     AuthService,
     FurnitureService,
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptorService, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ResponseInterceptorService, multi: true},
   ],
   bootstrap: [AppComponent]
 })
