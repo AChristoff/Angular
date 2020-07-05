@@ -5,10 +5,10 @@ import {FurnitureAllComponent} from './furniture-all/furniture-all.component';
 import {CreateFurnitureComponent} from './create-furniture/create-furniture.component';
 import {FurnitureDetailsComponent} from './furniture-details/furniture-details.component';
 import {FurnitureUserComponent} from './furniture-user/furniture-user.component';
+import {FurnitureEditComponent} from './furniture-edit/furniture-edit.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {FurnitureService} from '../../core/services/furniture.service';
 import {RouterModule} from '@angular/router';
-import {FurnitureEditComponent} from './furniture-edit/furniture-edit.component';
 import {SingleFurnitureResolver} from '../../core/resolvers/single-furniture.resolver';
 
 @NgModule({
@@ -20,7 +20,7 @@ import {SingleFurnitureResolver} from '../../core/resolvers/single-furniture.res
       {path: 'create', component: CreateFurnitureComponent},
       {path: 'all', component: FurnitureAllComponent},
       {path: 'edit/:id', component: FurnitureEditComponent},
-      {path: 'details/:id', component: FurnitureDetailsComponent, resolve: {furniture: SingleFurnitureResolver}},
+      {path: 'details/:id', component: FurnitureDetailsComponent , resolve: {furnitureData: SingleFurnitureResolver}},
       {path: 'user', component: FurnitureUserComponent},
     ]),
   ],

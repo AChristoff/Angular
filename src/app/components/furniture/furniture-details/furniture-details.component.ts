@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {FurnitureService} from '../../../core/services/furniture.service';
 import {Furniture} from '../../shared/models/furniture';
 
 @Component({
@@ -11,16 +10,11 @@ import {Furniture} from '../../shared/models/furniture';
 export class FurnitureDetailsComponent implements OnInit {
   furniture: Furniture;
 
-  constructor(private route: ActivatedRoute, private furnitureService: FurnitureService) {
+  constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.route.params.subscribe((data) => {
-      const id = data['id'];
-      this.furnitureService.getFurnitureById(id).subscribe((furnitureData) => {
-        this.furniture = furnitureData;
-      });
-    });
+    this.furniture = this.route.snapshot.data['furnitureData'];
   }
 
 }

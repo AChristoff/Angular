@@ -3,7 +3,10 @@ import {Resolve, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/rou
 import {Furniture} from '../../components/shared/models/furniture';
 import {FurnitureService} from '../services/furniture.service';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
+
 export class SingleFurnitureResolver implements Resolve<Furniture> {
 
   constructor(private furnitureService: FurnitureService) {
@@ -11,7 +14,6 @@ export class SingleFurnitureResolver implements Resolve<Furniture> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     const id = route.params['id'];
-
     return this.furnitureService.getFurnitureById(id);
   }
 }
