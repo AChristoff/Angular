@@ -10,6 +10,7 @@ import {Furniture} from '../../shared/models/furniture';
 })
 export class FurnitureUserComponent implements OnInit {
   userFurniture$: Observable<Furniture[]>;
+  id: string;
 
   constructor(private furnitureService: FurnitureService) {
   }
@@ -18,4 +19,9 @@ export class FurnitureUserComponent implements OnInit {
     this.userFurniture$ = this.furnitureService.getUserFurniture();
   }
 
+  deleteFurniture(id) {
+    this.furnitureService.deleteFurniture(id).subscribe(() => {
+      this.userFurniture$ = this.furnitureService.getUserFurniture();
+    });
+  }
 }

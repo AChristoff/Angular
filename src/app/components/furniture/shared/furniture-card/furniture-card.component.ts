@@ -1,7 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Furniture} from '../../../shared/models/furniture';
-import {FurnitureService} from '../../../../core/services/furniture.service';
 
 @Component({
   selector: 'app-furniture-card',
@@ -12,15 +11,15 @@ export class FurnitureCardComponent implements OnInit {
 
   @Input() furnitureInfo$: Observable<Furniture[]>;
   @Input() isEdit: boolean;
+  @Output() furnitureChange = new EventEmitter<string>();
 
-  constructor(private furnitureService: FurnitureService) { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
-  deleteFurniture(id) {
-    this.furnitureService.deleteFurniture(id).subscribe(() => {
-      this.furnitureInfo$ = this.furnitureService.getUserFurniture();
-    });
+  emitId(id) {
+    this.furnitureChange.emit(id);
   }
 }

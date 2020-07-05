@@ -16,5 +16,4 @@ export class FurnitureDetailsComponent implements OnInit {
   ngOnInit() {
     this.furniture = this.route.snapshot.data['furnitureData'];
   }
-
 }

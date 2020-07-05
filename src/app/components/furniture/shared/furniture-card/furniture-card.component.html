@@ -12,7 +12,7 @@
             <a [routerLink]="['/furniture/details', f._id]" class="btn btn-info">View</a>
             <ng-template [ngIf]="isEdit">
               <a [routerLink]="['/furniture/edit', f._id]" class="btn btn-warning">Edit</a>
-              <a (click)="deleteFurniture(f._id)" class="btn btn-danger">Delete</a>
+              <a (click)="emitId(f._id)" class="btn btn-danger">Delete</a>
             </ng-template>
           </div>
         </blockquote>
