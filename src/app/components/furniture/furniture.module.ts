@@ -35,5 +35,6 @@ import {SingleFurnitureResolver} from '../../core/resolvers/single-furniture.res
     FurnitureService,
   ]
 })
+
 export class FurnitureModule {
 }
