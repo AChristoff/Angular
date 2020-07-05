@@ -12,6 +12,7 @@ import {Furniture} from '../../shared/models/furniture';
 export class FurnitureEditComponent implements OnInit {
   furniture: Furniture;
   form: FormGroup;
+  action: string;
   id: string;
 
   constructor(private fb: FormBuilder,
@@ -21,6 +22,7 @@ export class FurnitureEditComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.action = 'edit';
     this.furniture = this.route.snapshot.data['furnitureData'];
     this.form = this.fb.group({
       make: [this.furniture.make, [Validators.required, Validators.minLength(4)]],
@@ -38,15 +40,15 @@ export class FurnitureEditComponent implements OnInit {
   }
 
 
-  editFurniture() {
-    console.log(this.id);
-    this.furnitureService.editFurniture(this.form.value, this.id).subscribe(() => {
-      this.router.navigate(['/furniture/user']);
-    });
-  }
-
-  get f() {
-    return this.form.controls;
-  }
+  // editFurniture() {
+  //   console.log(this.id);
+  //   this.furnitureService.editFurniture(this.form.value, this.id).subscribe(() => {
+  //     this.router.navigate(['/furniture/user']);
+  //   });
+  // }
+  //
+  // get f() {
+  //   return this.form.controls;
+  // }
 
 }

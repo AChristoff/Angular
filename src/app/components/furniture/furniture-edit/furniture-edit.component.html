@@ -4,7 +4,9 @@
       <h1>Edit Furniture</h1>
     </div>
   </div>
-  <form [formGroup]="form" (submit)="editFurniture()">
+  
+  <app-furniture-form [form]="form" [action]="action" [id]="id"></app-furniture-form>
+  <!--<form [formGroup]="form" (submit)="editFurniture()">
     <div class="row space-top">
       
       <div class="col-md-4">
@@ -58,5 +60,5 @@
         <button type="submit" class="btn btn-primary" [disabled]="form.invalid">Edit</button>
       </div>
     </div>
-  </form>
+  </form>-->
 </div>

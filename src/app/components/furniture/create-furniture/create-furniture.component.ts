@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 export class CreateFurnitureComponent implements OnInit {
 
   form: FormGroup;
+  action: string;
 
   constructor(private fb: FormBuilder,
               private furnitureService: FurnitureService,
@@ -18,6 +19,7 @@ export class CreateFurnitureComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.action = 'create';
     this.form = this.fb.group({
       make: ['', [Validators.required, Validators.minLength(4)]],
       model: ['', [Validators.required, Validators.minLength(4)]],
@@ -29,14 +31,14 @@ export class CreateFurnitureComponent implements OnInit {
     });
   }
 
-  createFurniture() {
-    this.furnitureService.createFurniture(this.form.value).subscribe(() => {
-      this.router.navigate(['/furniture/all']);
-    });
-  }
-
-  get f() {
-    return this.form.controls;
-  }
+  // createFurniture() {
+  //   this.furnitureService.createFurniture(this.form.value).subscribe(() => {
+  //     this.router.navigate(['/furniture/all']);
+  //   });
+  // }
+  //
+  // get f() {
+  //   return this.form.controls;
+  // }
 
 }

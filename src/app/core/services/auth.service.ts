@@ -1,14 +1,15 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
-@Injectable()
+@Injectable({
+  providedIn: 'root'
+})
 export class AuthService {
   private readonly loginUrl = 'http://localhost:5000/auth/login';
   private readonly registerUrl = 'http://localhost:5000/auth/register';
 
-  constructor(
-    private http : HttpClient
-  ) {  }
+  constructor(private http: HttpClient) {
+  }
 
   register(body) {
     return this.http.post(this.registerUrl, body);
