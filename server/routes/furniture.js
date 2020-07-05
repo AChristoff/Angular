@@ -152,7 +152,7 @@ router.delete('/delete/:id', authCheck, (req, res) => {
           })
         })
     })
-})
+});
 
 router.put('/edit/:id', authCheck, (req, res) => {
   const id = req.params.id;
@@ -165,12 +165,12 @@ router.put('/edit/:id', authCheck, (req, res) => {
     })
   }
 
-  if (!req.user.roles.includes('Admin')) {
-    return res.status(401).json({
-      success: false,
-      message: 'Unauthorized!'
-    })
-  }
+  // if (!req.user.roles.includes('Admin')) {
+  //   return res.status(401).json({
+  //     success: false,
+  //     message: 'Unauthorized!'
+  //   })
+  // }
 
   const validationResult = validateFurnitureForm(furniture)
   if (!validationResult.success) {

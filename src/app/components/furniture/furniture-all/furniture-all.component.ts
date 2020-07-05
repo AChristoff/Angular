@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Furniture} from '../../models/furniture';
+import {Furniture} from '../../shared/models/furniture';
 import {FurnitureService} from '../../../core/services/furniture.service';
 import {Observable} from 'rxjs';
 

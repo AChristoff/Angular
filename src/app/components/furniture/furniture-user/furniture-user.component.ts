@@ -18,10 +18,4 @@ export class FurnitureUserComponent implements OnInit {
     this.userFurniture$ = this.furnitureService.getUserFurniture();
   }
 
-  deleteFurniture(id) {
-    this.furnitureService.deleteFurniture(id).subscribe(() => {
-      this.userFurniture$ = this.furnitureService.getUserFurniture();
-    });
-  }
-
 }

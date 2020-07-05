@@ -1,0 +1,22 @@
+<div class="row space-top">
+  <div class="col-md-4 mb-4" *ngFor="let f of furnitureInfo$ | async">
+    <div class="card text-white bg-primary">
+      <div class="card-body">
+        <blockquote class="card-blockquote">
+          <img src="{{f.image}}" alt="{{f.make}}"/>
+          <p>{{f.description | slice:0:11}}...</p>
+          <footer>Someone famous in
+            <cite title="Source Title">Source Title</cite>
+          </footer>
+          <div class="pull-right">
+            <a [routerLink]="['/furniture/details', f._id]" class="btn btn-info">View</a>
+            <ng-template [ngIf]="isEdit">
+              <a [routerLink]="['/furniture/edit', f._id]" class="btn btn-warning">Edit</a>
+              <a (click)="deleteFurniture(f._id)" class="btn btn-danger">Delete</a>
+            </ng-template>
+          </div>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</div>

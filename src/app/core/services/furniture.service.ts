@@ -8,6 +8,7 @@ const getAllUrl = 'http://localhost:5000/furniture/all';
 const getSingleUrl = 'http://localhost:5000/furniture/details/';
 const getUserFurnitureUrl = 'http://localhost:5000/furniture/user';
 const deleteUrl = 'http://localhost:5000/furniture/delete/';
+const editUrl = 'http://localhost:5000/furniture/edit/';
 
 @Injectable({
   providedIn: 'root'
@@ -18,6 +19,10 @@ export class FurnitureService {
 
   createFurniture(data) {
     return this.http.post(createUrl, data);
+  }
+
+  editFurniture(data, id) {
+    return this.http.put(editUrl + id, data);
   }
 
   getAllFurniture(): Observable<Furniture[]> {

@@ -10,6 +10,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {FurnitureService} from '../../core/services/furniture.service';
 import {RouterModule} from '@angular/router';
 import {SingleFurnitureResolver} from '../../core/resolvers/single-furniture.resolver';
+import { FurnitureCardComponent } from './shared/furniture-card/furniture-card.component';
 
 @NgModule({
   imports: [
@@ -30,6 +31,7 @@ import {SingleFurnitureResolver} from '../../core/resolvers/single-furniture.res
     FurnitureDetailsComponent,
     FurnitureUserComponent,
     FurnitureEditComponent,
+    FurnitureCardComponent,
   ],
   providers: [
     FurnitureService,
