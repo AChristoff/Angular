@@ -6,7 +6,7 @@ import {CreateFurnitureComponent} from '../create-furniture/create-furniture.com
 import {FurnitureDetailsComponent} from '../furniture-details/furniture-details.component';
 import {FurnitureUserComponent} from '../furniture-user/furniture-user.component';
 import {ReactiveFormsModule} from '@angular/forms';
-import {FurnitureService} from '../furniture.service';
+import {FurnitureService} from '../../../core/services/furniture.service';
 import {RouterModule} from '@angular/router';
 
 @NgModule({

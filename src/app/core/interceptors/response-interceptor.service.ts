@@ -16,13 +16,11 @@ export class ResponseInterceptorService implements HttpInterceptor {
     return next
       .handle(req)
       .pipe(tap((success) => {
-        console.log(success);
-        if (success instanceof HttpResponse) {
-          this.toastr.success(success.body.message, 'Success');
-        }
-        console.log(success);
+          if (success instanceof HttpResponse) {
+            this.toastr.success(success.body.message, 'Success');
+          }
         }), catchError((err) => {
-        this.toastr.error(err.error.message, 'Error');
+          this.toastr.error(err.error.message, 'Error');
           throw err;
         })
       );

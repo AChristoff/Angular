@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Furniture} from '../models/furniture';
+import {Furniture} from '../../components/shared/models/furniture';
 import {Observable} from 'rxjs';
 
 const createUrl = 'http://localhost:5000/furniture/create';

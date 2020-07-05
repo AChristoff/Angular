@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {FurnitureService} from '../furniture.service';
-import {Furniture} from '../../models/furniture';
+import {FurnitureService} from '../../../core/services/furniture.service';
+import {Furniture} from '../../shared/models/furniture';
 
 @Component({
   selector: 'app-furniture-details',

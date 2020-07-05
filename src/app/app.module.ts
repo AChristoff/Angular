@@ -5,19 +5,19 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {AppComponent} from './app.component';
-import {NavigationComponent} from './navigation/navigation.component';
+import {NavigationComponent} from './components/shared/navigation/navigation.component';
 
-import {HomeComponent} from './home/home.component';
-import {SigninComponent} from './authentication/signin/signin.component';
-import {SignupComponent} from './authentication/signup/signup.component';
+import {HomeComponent} from './components/home/home.component';
+import {SigninComponent} from './components/authentication/signin/signin.component';
+import {SignupComponent} from './components/authentication/signup/signup.component';
 
-import {DropdownDirective} from './navigation/dropdown.directive';
-import {CollapseDirective} from './navigation/collapse.directive';
+import {DropdownDirective} from './components/shared/navigation/dropdown.directive';
+import {CollapseDirective} from './components/shared/navigation/collapse.directive';
 
 import {AppRoutingModule} from './app-routing.module';
-import {AuthService} from './authentication/auth.service';
-import {JwtInterceptorService} from './interceptors/jwt-interceptor.service';
-import {ResponseInterceptorService} from './interceptors/response-interceptor.service';
+import {AuthService} from './core/services/auth.service';
+import {JwtInterceptorService} from './core/interceptors/jwt-interceptor.service';
+import {ResponseInterceptorService} from './core/interceptors/response-interceptor.service';
 
 import {ToastrModule} from 'ngx-toastr';
 

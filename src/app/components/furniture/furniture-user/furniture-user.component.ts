@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {FurnitureService} from '../furniture.service';
+import {FurnitureService} from '../../../core/services/furniture.service';
 import {Observable} from 'rxjs';
-import {Furniture} from '../../models/furniture';
+import {Furniture} from '../../shared/models/furniture';
 
 @Component({
   selector: 'app-furniture-user',
