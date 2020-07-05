@@ -20,6 +20,8 @@ import {JwtInterceptorService} from './core/interceptors/jwt-interceptor.service
 import {ResponseInterceptorService} from './core/interceptors/response-interceptor.service';
 
 import {ToastrModule} from 'ngx-toastr';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { HeaderComponent } from './components/shared/header/header.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,8 @@ import {ToastrModule} from 'ngx-toastr';
     HomeComponent,
     DropdownDirective,
     CollapseDirective,
+    FooterComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
