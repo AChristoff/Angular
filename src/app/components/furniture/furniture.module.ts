@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 
 import {FurnitureAllComponent} from './furniture-all/furniture-all.component';
 import {CreateFurnitureComponent} from './create-furniture/create-furniture.component';
@@ -8,6 +8,8 @@ import {FurnitureUserComponent} from './furniture-user/furniture-user.component'
 import {ReactiveFormsModule} from '@angular/forms';
 import {FurnitureService} from '../../core/services/furniture.service';
 import {RouterModule} from '@angular/router';
+import {FurnitureEditComponent} from './furniture-edit/furniture-edit.component';
+import {SingleFurnitureResolver} from '../../core/resolvers/single-furniture.resolver';
 
 @NgModule({
   imports: [
@@ -17,7 +19,8 @@ import {RouterModule} from '@angular/router';
       {path: '', pathMatch: 'full', redirectTo: 'home'},
       {path: 'create', component: CreateFurnitureComponent},
       {path: 'all', component: FurnitureAllComponent},
-      {path: 'details/:id', component: FurnitureDetailsComponent},
+      {path: 'edit/:id', component: FurnitureEditComponent},
+      {path: 'details/:id', component: FurnitureDetailsComponent, resolve: {furniture: SingleFurnitureResolver}},
       {path: 'user', component: FurnitureUserComponent},
     ]),
   ],
@@ -26,9 +29,11 @@ import {RouterModule} from '@angular/router';
     CreateFurnitureComponent,
     FurnitureDetailsComponent,
     FurnitureUserComponent,
+    FurnitureEditComponent,
   ],
   providers: [
     FurnitureService,
   ]
 })
-export class FurnitureModule { }
+export class FurnitureModule {
+}

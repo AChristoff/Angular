@@ -24,7 +24,7 @@ export class FurnitureService {
     return this.http.get<Furniture[]>(getAllUrl);
   }
 
-  getFurniture(id): Observable<Furniture> {
+  getFurnitureById(id): Observable<Furniture> {
     return this.http.get<Furniture>(getSingleUrl + id);
   }
 

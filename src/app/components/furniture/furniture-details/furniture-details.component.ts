@@ -17,7 +17,7 @@ export class FurnitureDetailsComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe((data) => {
       const id = data['id'];
-      this.furnitureService.getFurniture(id).subscribe((furnitureData) => {
+      this.furnitureService.getFurnitureById(id).subscribe((furnitureData) => {
         this.furniture = furnitureData;
       });
     });
