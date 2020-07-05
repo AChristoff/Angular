@@ -10,7 +10,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {FurnitureService} from '../../core/services/furniture.service';
 import {RouterModule} from '@angular/router';
 import {SingleFurnitureResolver} from '../../core/resolvers/single-furniture.resolver';
-import { FurnitureCardComponent } from './shared/furniture-card/furniture-card.component';
+import {FurnitureCardComponent} from './shared/furniture-card/furniture-card.component';
 
 @NgModule({
   imports: [
@@ -20,8 +20,8 @@ import { FurnitureCardComponent } from './shared/furniture-card/furniture-card.c
       {path: '', pathMatch: 'full', redirectTo: 'home'},
       {path: 'create', component: CreateFurnitureComponent},
       {path: 'all', component: FurnitureAllComponent},
-      {path: 'edit/:id', component: FurnitureEditComponent},
-      {path: 'details/:id', component: FurnitureDetailsComponent , resolve: {furnitureData: SingleFurnitureResolver}},
+      {path: 'edit/:id', component: FurnitureEditComponent, resolve: {furnitureData: SingleFurnitureResolver}},
+      {path: 'details/:id', component: FurnitureDetailsComponent, resolve: {furnitureData: SingleFurnitureResolver}},
       {path: 'user', component: FurnitureUserComponent},
     ]),
   ],
