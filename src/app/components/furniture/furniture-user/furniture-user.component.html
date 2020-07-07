@@ -1,0 +1,15 @@
+<div class="container">
+  
+  <div class="row space-top">
+    <div class="col-md-12">
+      <h1>Profile Page</h1>
+      <p>Listing your furniture.</p>
+    </div>
+  </div>
+  
+  <app-furniture-card
+    [furnitureInfo$]="userFurniture$"
+    [isEdit]="true"
+    (furnitureChange)="deleteFurniture($event)"></app-furniture-card>
+  
+</div>
