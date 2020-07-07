@@ -30,15 +30,4 @@ export class CreateFurnitureComponent implements OnInit {
       material: ['', [Validators.nullValidator]],
     });
   }
-
-  // createFurniture() {
-  //   this.furnitureService.createFurniture(this.form.value).subscribe(() => {
-  //     this.router.navigate(['/furniture/all']);
-  //   });
-  // }
-  //
-  // get f() {
-  //   return this.form.controls;
-  // }
-
 }

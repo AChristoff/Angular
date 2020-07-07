@@ -38,17 +38,4 @@ export class FurnitureEditComponent implements OnInit {
       this.id = data['id'];
     });
   }
-
-
-  // editFurniture() {
-  //   console.log(this.id);
-  //   this.furnitureService.editFurniture(this.form.value, this.id).subscribe(() => {
-  //     this.router.navigate(['/furniture/user']);
-  //   });
-  // }
-  //
-  // get f() {
-  //   return this.form.controls;
-  // }
-
 }
