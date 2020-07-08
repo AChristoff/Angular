@@ -6,9 +6,11 @@ import {RouterModule} from '@angular/router';
 import {AuthService} from '../../core/services/auth.service';
 import {SignupComponent} from './signup/signup.component';
 import {SigninComponent} from './signin/signin.component';
+import {MaterialModule} from '../shared/material.module';
 
 @NgModule({
   imports: [
+    MaterialModule,
     FormsModule,
     CommonModule,
     RouterModule.forChild([

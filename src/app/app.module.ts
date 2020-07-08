@@ -21,6 +21,7 @@ import {ResponseInterceptorService} from './core/interceptors/response-intercept
 import {ToastrModule} from 'ngx-toastr';
 import {FooterComponent} from './components/shared/footer/footer.component';
 import {HeaderComponent} from './components/shared/header/header.component';
+import {MaterialModule} from './components/shared/material.module';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import {HeaderComponent} from './components/shared/header/header.component';
     HeaderComponent,
   ],
   imports: [
+    MaterialModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
