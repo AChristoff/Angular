@@ -21,6 +21,7 @@
 <mat-icon aria-hidden="false" aria-label="thumb_up icon">thumb_up</mat-icon>
 
 <mat-sidenav-container class="example-container" autosize style="height: 100%;">
+  
   <mat-drawer #drawer class="example-sidenav" mode="side">
     <mat-selection-list #shoes [multiple]="false">
       <mat-list-option *ngFor="let shoe of typesOfShoes" [value]="shoe">
@@ -28,6 +29,34 @@
       </mat-list-option>
     </mat-selection-list>
   </mat-drawer>
-
+  
+  <p>
+  <mat-form-field appearance="outline">
+    <mat-label>Outline form field</mat-label>
+    <input matInput type="text" placeholder="">
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
+  </p>
+  
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your email</mat-label>
+      <input matInput placeholder="pat@example.com" [formControl]="email" required>
+      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+    </mat-form-field>
+  </p>
+  
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'">
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+    </mat-form-field>
+  </p>
+  
 </mat-sidenav-container>
+
+
 
