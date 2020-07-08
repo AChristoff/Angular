@@ -27,7 +27,7 @@ export class SignupComponent implements OnInit {
       .subscribe((data) => {
         console.log(data);
 
-        this.router.navigate([ '/signin' ]);
+        this.router.navigate([ '/login' ]);
       });
   }
 

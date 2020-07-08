@@ -25,6 +25,7 @@ export class SigninComponent implements OnInit {
   }
 
   signIn() {
+    console.log(this.loginForm.value);
     this.authService
       .login(this.loginForm.value)
       .subscribe((data) => {

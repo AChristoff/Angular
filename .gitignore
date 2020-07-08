@@ -9,6 +9,7 @@
 /src/.sass-cache
 /src/app/.sass-cache
 */.sass-cache/
+/src/*/.sass-cache
 
 # dependencies
 /node_modules
