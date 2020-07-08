@@ -8,8 +8,9 @@
 /bazel-out
 /src/.sass-cache
 /src/app/.sass-cache
-*/.sass-cache/
-.sass-cache/
+/src/app/*/*/.sass-cache/
+*/.sass-cache/*
+.sass-cache/*
 
 # dependencies
 /node_modules
