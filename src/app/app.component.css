@@ -1,5 +1,4 @@
 #content {
-  min-height: calc(100vh - 30px);
-  padding-top: 90px; }
+  min-height: calc(100vh - 6em); }
 
 /*# sourceMappingURL=app.component.css.map */

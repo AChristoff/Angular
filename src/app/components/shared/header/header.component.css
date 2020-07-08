@@ -1,5 +1,6 @@
 .page-header {
-  background: #673ab7; }
+  background: #673ab7;
+  height: 4em; }
   .page-header .navbar-header {
     margin-left: auto;
     margin-right: 2em; }

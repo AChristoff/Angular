@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -7,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   drawer: any;
+  username: string;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    this.username = localStorage.getItem('username');
   }
+
 
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../../../core/services/auth.service';
 
@@ -8,12 +8,16 @@ import { AuthService } from '../../../core/services/auth.service';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
+  name: string;
   constructor(
     public authService: AuthService,
     private router: Router
   ) {  }
 
+  @Input() username: string;
+
   ngOnInit() {
+    this.name = this.username;
   }
 
   logout() {

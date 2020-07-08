@@ -11,9 +11,6 @@ import {NavigationComponent} from './components/shared/navigation/navigation.com
 
 import {HomeComponent} from './components/home/home.component';
 
-import {DropdownDirective} from './components/shared/navigation/dropdown.directive';
-import {CollapseDirective} from './components/shared/navigation/collapse.directive';
-
 import {AuthService} from './core/services/auth.service';
 import {JwtInterceptorService} from './core/interceptors/jwt-interceptor.service';
 import {ResponseInterceptorService} from './core/interceptors/response-interceptor.service';
@@ -28,8 +25,6 @@ import {MaterialModule} from './components/shared/material.module';
     AppComponent,
     NavigationComponent,
     HomeComponent,
-    DropdownDirective,
-    CollapseDirective,
     FooterComponent,
     HeaderComponent,
   ],

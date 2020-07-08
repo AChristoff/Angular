@@ -1,0 +1,18 @@
+footer {
+  background: rgba(103,58,183,.15);;
+  height: 2em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #673ab7;
+  font-style: italic;
+
+  a {
+    color: #673ab7;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
