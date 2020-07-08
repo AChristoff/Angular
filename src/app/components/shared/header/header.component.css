@@ -1,0 +1,16 @@
+.page-header {
+  background: #673ab7; }
+  .page-header .navbar-header {
+    margin-left: auto;
+    margin-right: 2em; }
+  .page-header .navbar-brand {
+    font-size: 1.25em; }
+    .page-header .navbar-brand .paw {
+      font-size: 1.05em;
+      margin-right: 0.2em;
+      transform: rotate(30deg); }
+  .page-header a {
+    text-decoration: none;
+    color: #FFFFFF; }
+
+/*# sourceMappingURL=header.component.css.map */

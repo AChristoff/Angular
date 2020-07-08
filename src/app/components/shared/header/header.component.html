@@ -1,18 +1,20 @@
-<header>
+<header class="page-header">
   
-  <mat-toolbar>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon" (click)="drawer.toggle()">
-      <mat-icon>menu</mat-icon>
-    </button>
-    <span>My App</span>
-    <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
-    <app-navigation></app-navigation>
-  </mat-toolbar>
-  
+  <div class="wrapper">
+    <mat-toolbar color="primary">
+      <a class="navbar-brand" routerLink="/home">
+        <mat-icon class="paw">pets</mat-icon>
+        Dogster
+      </a>
+      
+      <div class="navbar-header">
+        <app-navigation></app-navigation>
+      </div>
+      
+      <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+      </button>
+    </mat-toolbar>
+  </div>
+
 </header>
