@@ -3,7 +3,7 @@
   height: 4em; }
   .page-header .navbar-header {
     margin-left: auto;
-    margin-right: 2em; }
+    height: 100%; }
   .page-header .navbar-brand {
     font-size: 1.25em; }
     .page-header .navbar-brand .paw {

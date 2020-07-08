@@ -1,15 +1,22 @@
-ul {
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
+nav {
+  height: 100%;
 
-li {
-  list-style: none;
-  margin-left: 2em;
-}
+  ul {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
 
-a {
-  text-decoration: none;
-  color: #FFFFFF;
+    li {
+      height: 100%;
+      list-style: none;
+
+      button.mat-button {
+        height: 100%;
+        font-size: 1em;
+        padding: auto 2em
+      ;
+      }
+    }
+  }
 }

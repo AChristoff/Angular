@@ -1,7 +1,5 @@
 <nav>
   
-  <div class="navbar-collapse collapse" id="navbarColor01">
-    
     <ul class="navbar-nav mr-auto">
       
       <li *ngIf="!authService.isAuthenticated()" class="nav-item">
@@ -13,7 +11,7 @@
       </li>
       
       <li *ngIf="authService.isAuthenticated()" class="nav-item">
-        <a mat-button class="nav-link" (click)="logout()">Hello {{name}},</a>
+        <button mat-button class="nav-link" (click)="logout()">Hello {{name}},</button>
       </li>
       
       <li *ngIf="authService.isAuthenticated()" class="nav-item">
@@ -30,8 +28,5 @@
       </li>
     
     </ul>
-    
-  
-  </div>
 
 </nav>
