@@ -1,48 +1,63 @@
-<p>Login</p>
+<h1>Login</h1>
 
-<form [formGroup]="form" (submit)="onRegister()">
+<form [formGroup]="form" (submit)="onRegister()" class="login-form">
   
-  <div class="form-group input-group">
-    <div class="input-group-prepend">
-      <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
-    </div>
-    <input class="form-control"
-           formControlName="email"
-           placeholder="Email Address"
-           type="email">
-  </div>
-  <div class="alert alert-danger"
-       *ngIf="f.email.touched && f.email.errors?.required">
-    This field is required
-  </div>
-  <div class="alert alert-danger"
-       *ngIf="f.email.errors?.pattern">
-    Email is invalid
+  <div class="form-group group-email">
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Email</mat-label>
+      
+      <input
+        required
+        matInput
+        formControlName="email"
+        type="email"
+        placeholder="Ex. john@example.com">
+      
+      <mat-icon matSuffix>mail_outline</mat-icon>
+      
+      <mat-error *ngIf="f.email.touched && f.email.errors?.required">This field is required</mat-error>
+      <mat-error *ngIf="f.email.errors?.pattern">Email is invalid</mat-error>
+    
+    </mat-form-field>
+  
   </div>
   
   
-  <div class="form-group input-group">
-    <div class="input-group-prepend">
-      <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
-    </div>
-    <input class="form-control"
-           placeholder="Create password"
-           formControlName="password"
-           type="password">
-  </div>
-  <div class="alert alert-danger"
-       *ngIf="f.password.touched && f.password.errors?.required">
-    This field is required
-  </div>
-  <div class="alert alert-danger"
-       *ngIf="f.password.touched && f.password.errors?.pattern">
-    Password must be between 6-40 chars and contain at least one: uppercase / lowercase / special char / digit
+  <div class="form-group">
+    
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      
+      <input
+        required
+        matInput
+        formControlName="password"
+        type="password"
+        placeholder="Ex. John#123"
+        [type]="hide ? 'password' : 'text'">
+      
+      <button
+        type="button"
+        mat-icon-button
+        matSuffix (click)="hide = !hide"
+        [attr.aria-label]="'Hide password'"
+        [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+      </button>
+      
+      <mat-error *ngIf="f.password.touched && f.password.errors?.required">This field is required</mat-error>
+      <mat-error *ngIf="f.password.touched && f.password.errors?.pattern">Password must be between 6-40 chars and contain at least one: uppercase / lowercase / special char / digit</mat-error>
+    
+    </mat-form-field>
+  
   </div>
   
   <button type="submit"
           [disabled]="form.invalid"
-          class="btn btn-primary btn-block">
-    Login
+          mat-raised-button
+          color="primary"
+          class="login-btn">Login
   </button>
 
 </form>
