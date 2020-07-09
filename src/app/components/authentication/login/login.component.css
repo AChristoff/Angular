@@ -7,14 +7,15 @@
     height: 3em;
     margin: 1em 0; }
   .login-form .login-btn {
-    margin-top: 3.5em;
-    height: 3em;
+    margin-top: 3em;
+    height: 2.5em;
     font-size: 1.1em; }
     .login-form .login-btn:disabled {
       cursor: not-allowed; }
-  .login-form .group-email {
-    margin-bottom: 2em; }
-    .login-form .group-email mat-icon {
-      margin-right: 0.35em; }
+  .login-form .group-email mat-icon {
+    font-size: 1.4em; }
+  .login-form .group-password mat-icon {
+    margin-bottom: 0.2em;
+    font-size: 1.4em; }
 
 /*# sourceMappingURL=login.component.css.map */

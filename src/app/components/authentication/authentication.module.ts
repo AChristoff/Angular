@@ -4,10 +4,10 @@ import {CommonModule} from '@angular/common';
 import {RouterModule} from '@angular/router';
 
 import {AuthService} from '../../core/services/auth.service';
-import {SignupComponent} from './signup/signup.component';
 import {LoginComponent} from './login/login.component';
 
 import {MaterialModule} from '../shared/material.module';
+import {RegisterComponent} from './register/register.component';
 
 @NgModule({
   imports: [
@@ -18,12 +18,12 @@ import {MaterialModule} from '../shared/material.module';
     RouterModule.forChild([
       {path: '', pathMatch: 'full', redirectTo: 'home'},
       {path: 'login', component: LoginComponent},
-      {path: 'register', component: SignupComponent},
+      {path: 'register', component: RegisterComponent},
     ]),
   ],
   declarations: [
-    SignupComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   providers: [
     AuthService,

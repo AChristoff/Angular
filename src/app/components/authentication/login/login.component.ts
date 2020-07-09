@@ -1,5 +1,5 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {FormBuilder, NgForm, Validators} from '@angular/forms';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, Validators} from '@angular/forms';
 
 import {AuthService} from '../../../core/services/auth.service';
 import {Router} from '@angular/router';
@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
     );
   }
 
-  onRegister() {
+  onLogin() {
     const logData = {
       email: this.form.controls.email.value,
       password: this.form.controls.password.value,
