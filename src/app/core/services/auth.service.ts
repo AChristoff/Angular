@@ -8,9 +8,10 @@ import {BehaviorSubject} from 'rxjs';
 export class AuthService {
   private readonly loginUrl = 'http://localhost:5000/auth/login';
   private readonly registerUrl = 'http://localhost:5000/auth/register';
+  username = localStorage.getItem('username');
 
   ///////////////
-  private userDataSource = new BehaviorSubject<string>('');
+  private userDataSource = new BehaviorSubject<string>(this.username);
   currentUserData = this.userDataSource.asObservable();
   //////////////
 

@@ -1,22 +1,42 @@
-<div class="row space-top">
-  <div class="col-md-4 mb-4" *ngFor="let f of furnitureInfo$ | async">
-    <div class="card text-white bg-primary">
-      <div class="card-body">
-        <blockquote class="card-blockquote">
-          <img src="{{f.image}}" alt="{{f.make}}"/>
-          <p>{{f.description | slice:0:11}}...</p>
-          <footer>Someone famous in
-            <cite title="Source Title">Source Title</cite>
-          </footer>
-          <div class="pull-right">
-            <a [routerLink]="['/furniture/details', f._id]" class="btn btn-info">View</a>
-            <ng-template [ngIf]="isEdit">
-              <a [routerLink]="['/furniture/edit', f._id]" class="btn btn-warning">Edit</a>
-              <a (click)="emitId(f._id)" class="btn btn-danger">Delete</a>
-            </ng-template>
-          </div>
-        </blockquote>
-      </div>
-    </div>
-  </div>
+<div class="card-wrapper" *ngFor="let f of furnitureInfo$ | async">
+  <mat-card class="card">
+    <!--  <mat-card class="card">-->
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+    </mat-card-header>
+    <!--    <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">-->
+    <img mat-card-image src="{{f.image}}" alt="{{f.make}}">
+    <mat-card-content>
+      <mat-card-title>{{f.make}}</mat-card-title>
+      <mat-card-subtitle>{{f.model}}</mat-card-subtitle>
+      <p>{{f.description | slice:0:11}}...</p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button [routerLink]="['/furniture/details', f._id]">View</button>
+      <button mat-button [routerLink]="['/furniture/edit', f._id]">Edit</button>
+      <button mat-button><a (click)="emitId(f._id)" class="btn btn-danger">Delete</a></button>
+    </mat-card-actions>
+  </mat-card>
 </div>
+
+<!--<div class="card" *ngFor="let f of furnitureInfo$ | async">-->
+<!--  <div class="card text-white bg-primary">-->
+<!--    <div class="card-body">-->
+<!--      <blockquote class="card-blockquote">-->
+<!--        <img src="{{f.image}}" alt="{{f.make}}"/>-->
+<!--        <p>{{f.description | slice:0:11}}...</p>-->
+<!--        <footer>Someone famous in-->
+<!--          <cite title="Source Title">Source Title</cite>-->
+<!--        </footer>-->
+<!--        <div class="pull-right">-->
+<!--          <a [routerLink]="['/furniture/details', f._id]" class="btn btn-info">View</a>-->
+<!--          <ng-template [ngIf]="isEdit">-->
+<!--            <a [routerLink]="['/furniture/edit', f._id]" class="btn btn-warning">Edit</a>-->
+<!--            <a (click)="emitId(f._id)" class="btn btn-danger">Delete</a>-->
+<!--          </ng-template>-->
+<!--        </div>-->
+<!--      </blockquote>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+

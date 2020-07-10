@@ -1,7 +1,10 @@
 <h1>Register</h1>
 
+<div *ngIf="spinner" class="spinner">
+  <mat-spinner></mat-spinner>
+</div>
+
 <form [formGroup]="form" (submit)="onRegister()" class="register-form">
-  
   
   <div class="form-group group-email">
     

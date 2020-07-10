@@ -5,7 +5,7 @@ import {Furniture} from '../../../shared/models/furniture';
 @Component({
   selector: 'app-furniture-card',
   templateUrl: './furniture-card.component.html',
-  styleUrls: ['./furniture-card.component.css']
+  styleUrls: ['./furniture-card.component.scss']
 })
 export class FurnitureCardComponent implements OnInit {
 

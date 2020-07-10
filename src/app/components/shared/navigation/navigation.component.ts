@@ -8,7 +8,7 @@ import { AuthService } from '../../../core/services/auth.service';
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-  userName: string;
+  username: string;
   constructor(
     public authService: AuthService,
     private router: Router
@@ -16,8 +16,9 @@ export class NavigationComponent implements OnInit {
 
   ngOnInit() {
     //////
+    localStorage.getItem('username');
     this.authService.currentUserData.subscribe((data) => {
-      this.userName = data;
+      this.username = data;
     });
     //////
   }

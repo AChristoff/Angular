@@ -14,6 +14,7 @@ export class RegisterComponent implements OnInit {
   form;
   hidePass: any = true;
   hideConfPass: any = true;
+  spinner: any = false;
 
   constructor(
     private fb: FormBuilder,
@@ -60,6 +61,7 @@ export class RegisterComponent implements OnInit {
   }
 
   onRegister() {
+    this.spinner = true;
     const regData = {
       name: this.form.controls.name.value,
       email: this.form.controls.email.value,
@@ -68,8 +70,7 @@ export class RegisterComponent implements OnInit {
     this.authService
       .register(regData)
       .subscribe((data) => {
-        console.log(data);
-
+        this.spinner = false;
         this.router.navigate(['/user/login']);
       });
   }

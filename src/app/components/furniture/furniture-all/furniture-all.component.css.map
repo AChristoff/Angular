@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,GAAI;EACF,KAAK,EAAE,IAAI;;AAGb,MAAO;EACL,OAAO,EAAE,IAAI;EACb,SAAS,EAAE,IAAI",
+"sources": ["furniture-all.component.scss"],
+"names": [],
+"file": "furniture-all.component.css"
+}

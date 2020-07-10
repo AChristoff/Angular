@@ -12,6 +12,7 @@ import {Router} from '@angular/router';
 export class LoginComponent implements OnInit {
   form;
   hide: any = true;
+  spinner: any = false;
 
   constructor(
     private fb: FormBuilder,
@@ -42,14 +43,15 @@ export class LoginComponent implements OnInit {
   }
 
   onLogin() {
+    this.spinner = true;
     const logData = {
       email: this.form.controls.email.value,
       password: this.form.controls.password.value,
     };
-    console.log(logData);
     this.authService.login(logData).subscribe((data) => {
       localStorage.setItem('token', data['token']);
       localStorage.setItem('username', data['user']['name']);
+      this.spinner = false;
       this.router.navigate(['/home']);
     });
   }

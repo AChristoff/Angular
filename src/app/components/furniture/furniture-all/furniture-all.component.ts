@@ -6,7 +6,7 @@ import {Observable} from 'rxjs';
 @Component({
   selector: 'app-furniture-all',
   templateUrl: './furniture-all.component.html',
-  styleUrls: ['./furniture-all.component.css']
+  styleUrls: ['./furniture-all.component.scss']
 })
 export class FurnitureAllComponent implements OnInit {
 
