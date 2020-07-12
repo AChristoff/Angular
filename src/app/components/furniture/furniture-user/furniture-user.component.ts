@@ -6,7 +6,7 @@ import {Furniture} from '../../shared/models/furniture';
 @Component({
   selector: 'app-furniture-user',
   templateUrl: './furniture-user.component.html',
-  styleUrls: ['./furniture-user.component.css']
+  styleUrls: ['./furniture-user.component.scss']
 })
 export class FurnitureUserComponent implements OnInit {
   userFurniture$: Observable<Furniture[]>;

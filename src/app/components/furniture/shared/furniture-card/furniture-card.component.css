@@ -2,6 +2,16 @@ img {
   width: 100%; }
 
 .card-wrapper {
-  flex: 1 1 30%; }
+  flex: 1 1 30%;
+  margin: 1em; }
+  .card-wrapper .mat-card {
+    background: rgba(103, 58, 183, 0.15);
+    color: #673ab7;
+    padding: 0 0 1em 0; }
+    .card-wrapper .mat-card .mat-card-header {
+      display: block; }
+    .card-wrapper .mat-card .mat-stroked-button {
+      background: #FFFFFF;
+      margin: 0 0.25em; }
 
 /*# sourceMappingURL=furniture-card.component.css.map */

@@ -1,6 +1,3 @@
-img {
-  width: 100%; }
-
 .cards {
   display: flex;
   flex-wrap: wrap; }

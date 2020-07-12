@@ -8,6 +8,7 @@ import {LoginComponent} from './login/login.component';
 
 import {MaterialModule} from '../shared/material.module';
 import {RegisterComponent} from './register/register.component';
+import { RegisterConfirmComponent } from './register-confirm/register-confirm.component';
 
 @NgModule({
   imports: [
@@ -19,11 +20,13 @@ import {RegisterComponent} from './register/register.component';
       {path: '', pathMatch: 'full', redirectTo: 'home'},
       {path: 'login', component: LoginComponent},
       {path: 'register', component: RegisterComponent},
+      {path: 'register/confirm/:token', component: RegisterConfirmComponent},
     ]),
   ],
   declarations: [
     LoginComponent,
     RegisterComponent,
+    RegisterConfirmComponent,
   ],
   providers: [
     AuthService,

@@ -15,6 +15,8 @@ export class RegisterComponent implements OnInit {
   hidePass: any = true;
   hideConfPass: any = true;
   spinner: any = false;
+  confirm: boolean;
+  email: string;
 
   constructor(
     private fb: FormBuilder,
@@ -24,70 +26,33 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.confirm = false;
     this.form = this.fb.group(
       {
-        name: [
-          '',
-          [
-            Validators.required,
-            Validators.pattern(/[A-Za-z]{2,20}/)
-          ]
-        ],
         email: [
           '',
           [
             Validators.required,
             Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/),
           ]
-        ],
-        password: [
-          '',
-          [
-            Validators.required,
-            Validators.pattern(/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~`])[0-9a-zA-Z!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?~`]{6,40}$/),
-          ]
-        ],
-        confirmPassword: [
-          '',
-          [
-            Validators.required,
-          ]
-        ],
-      },
-      {
-        validator: this.customValidator.passwordMatchValidator('password', 'confirmPassword')
+        ]
       }
     );
   }
 
   onRegister() {
     this.spinner = true;
+    this.email = this.form.controls.email.value;
     const regData = {
-      name: this.form.controls.name.value,
       email: this.form.controls.email.value,
-      password: this.form.controls.password.value,
     };
     this.authService
       .register(regData)
       .subscribe((data) => {
         this.spinner = false;
-        this.router.navigate(['/user/login']);
+        this.confirm = true;
       });
   }
-
-  // onRegister() {
-  //   const regData = {
-  //     email: this.form.controls.email.value,
-  //     password: this.form.controls.password.value,
-  //     confirmPassword: this.form.controls.password.value,
-  //   };
-  //   console.log(regData);
-  //   this.authService.login(regData).subscribe((data) => {
-  //     localStorage.setItem('token', data['token']);
-  //     localStorage.setItem('username', data['user']['name']);
-  //     this.router.navigate(['/home']);
-  //   });
-  // }
 
   get f() {
     return this.form.controls;

@@ -1,0 +1,23 @@
+img {
+  width: 100%;
+}
+
+.card-wrapper {
+  flex: 1 1 30%;
+  margin: 1em;
+
+  .mat-card {
+    background: rgba(103, 58, 183, 0.15);;
+    color: #673ab7;
+    padding: 0 0 1em 0;
+
+    .mat-card-header {
+      display:  block;
+    }
+
+    .mat-stroked-button {
+      background: #FFFFFF;
+      margin: 0 0.25em;
+    }
+  }
+}

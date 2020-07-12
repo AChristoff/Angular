@@ -4,28 +4,7 @@
   <mat-spinner></mat-spinner>
 </div>
 
-<form [formGroup]="form" (submit)="onRegister()" class="register-form">
-  
-  <div class="form-group group-email">
-    
-    <mat-form-field class="example-full-width">
-      <mat-label>User Name</mat-label>
-      
-      <input
-        required
-        matInput
-        formControlName="name"
-        type="text"
-        placeholder="Ex. John">
-      
-      <mat-icon matSuffix>account_circle</mat-icon>
-      
-      <mat-error *ngIf="f.name.touched && f.name.errors?.required">This field is required</mat-error>
-      <mat-error *ngIf="f.name.errors?.pattern">Invalid name</mat-error>
-    
-    </mat-form-field>
-  
-  </div>
+<form *ngIf="confirm === false; else confirmMessage" [formGroup]="form" (submit)="onRegister()" class="register-form">
   
   <div class="form-group group-email">
     
@@ -48,66 +27,6 @@
   
   </div>
   
-  
-  <div class="form-group group-password">
-    
-    <mat-form-field class="example-full-width">
-      <mat-label>Password</mat-label>
-      
-      <input
-        required
-        matInput
-        formControlName="password"
-        type="password"
-        placeholder="Ex. John#123"
-        [type]="hidePass ? 'password' : 'text'">
-      
-      <button
-        type="button"
-        mat-icon-button
-        matSuffix (click)="hidePass = !hidePass"
-        [attr.aria-label]="'Hide password'"
-        [attr.aria-pressed]="hidePass">
-        <mat-icon>{{hidePass ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </button>
-      
-      <mat-error *ngIf="f.password.touched && f.password.errors?.required">This field is required</mat-error>
-      <mat-error *ngIf="f.password.touched && f.password.errors?.pattern">Password must be between 6-40 chars and contain at least one: uppercase / lowercase / special char / digit</mat-error>
-    
-    </mat-form-field>
-  
-  </div>
-  
-  
-  <div class="form-group group-password">
-    
-    <mat-form-field class="example-full-width">
-      <mat-label>Confirm Password</mat-label>
-      
-      <input
-        required
-        matInput
-        formControlName="confirmPassword"
-        type="password"
-        placeholder=""
-        [type]="hideConfPass ? 'password' : 'text'">
-      
-      <button
-        type="button"
-        mat-icon-button
-        matSuffix (click)="hideConfPass = !hideConfPass"
-        [attr.aria-label]="'Hide password'"
-        [attr.aria-pressed]="hideConfPass">
-        <mat-icon>{{hideConfPass ? 'visibility_off' : 'visibility'}}</mat-icon>
-      </button>
-      
-      <mat-error *ngIf="f.confirmPassword.touched && f.confirmPassword.errors?.required">This field is required</mat-error>
-      <mat-error *ngIf="f.confirmPassword.errors?.passwordMismatch">Passwords do not match!</mat-error>
-    
-    </mat-form-field>
-  
-  </div>
-  
   <button type="submit"
           [disabled]="form.invalid"
           mat-raised-button
@@ -116,3 +35,9 @@
   </button>
 
 </form>
+
+<ng-template #confirmMessage>
+  <h3>Congratulations!</h3>
+  <h3>Your account has been created!</h3>
+  <h3>Please check you Inbox to confirm you email ({{email}})</h3>
+</ng-template>

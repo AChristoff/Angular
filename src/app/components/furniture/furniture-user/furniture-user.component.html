@@ -7,9 +7,12 @@
     </div>
   </div>
   
-  <app-furniture-card
-    [furnitureInfo$]="userFurniture$"
-    [isEdit]="true"
-    (furnitureChange)="deleteFurniture($event)"></app-furniture-card>
-  
+  <div class="wrapper">
+    <app-furniture-card
+      [furnitureInfo$]="userFurniture$"
+      [isEdit]="true"
+      (furnitureChange)="deleteFurniture($event)">
+    </app-furniture-card>
+  </div>
+
 </div>
