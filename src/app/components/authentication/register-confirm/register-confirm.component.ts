@@ -16,6 +16,7 @@ export class RegisterConfirmComponent implements OnInit {
   hideConfPass: any = true;
   spinner: any = false;
   token;
+  currentStep: number;
 
   constructor(
     private fb: FormBuilder,
@@ -26,6 +27,7 @@ export class RegisterConfirmComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.currentStep = 1;
     this.form = this.fb.group(
       {
         username: [
@@ -64,10 +66,13 @@ export class RegisterConfirmComponent implements OnInit {
     };
     this.authService.registerConfirm(regData, this.token).subscribe((data) => {
       this.spinner = false;
+      this.currentStep = 2;
       localStorage.setItem('token', data['token']);
       localStorage.setItem('username', data['username']);
-      this.router.navigate(['/home']);
     });
+  }
+  onDone() {
+    this.router.navigate(['/home']);
   }
 
   get f() {

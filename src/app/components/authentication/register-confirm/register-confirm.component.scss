@@ -5,7 +5,12 @@
   mat-form-field,
   .register-btn {
     width: 100%;
-    margin: 3em 0 1em 0;
+    height: 3em;
+    margin: 1em 0;
+  }
+
+  .register-btn {
+    margin-top: 3em;
     height: 2.5em;
     font-size: 1.1em;
 
@@ -28,8 +33,13 @@
       font-size: 1.4em;
     }
   }
+
 }
 
-.register-message {
-  color: #673ab7;
+.done-btn {
+  width: 20em;
+  margin: 3em 0 1em 0;
+  height: 2.5em;
+  font-size: 1.1em;
 }
+

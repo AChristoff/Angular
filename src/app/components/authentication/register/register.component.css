@@ -4,12 +4,10 @@
   .register-form mat-form-field,
   .register-form .register-btn {
     width: 100%;
-    height: 3em;
-    margin: 1em 0; }
-  .register-form .register-btn {
-    margin-top: 3em;
+    margin: 3em 0 1em 0;
     height: 2.5em;
     font-size: 1.1em; }
+    .register-form mat-form-field:disabled,
     .register-form .register-btn:disabled {
       cursor: not-allowed; }
   .register-form .group-email mat-icon {
@@ -17,5 +15,8 @@
   .register-form .group-password mat-icon {
     margin-bottom: 0.2em;
     font-size: 1.4em; }
+
+.register-message {
+  color: #673ab7; }
 
 /*# sourceMappingURL=register.component.css.map */

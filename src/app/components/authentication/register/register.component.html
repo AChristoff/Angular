@@ -1,43 +1,58 @@
-<h1>Register</h1>
-
-<div *ngIf="spinner" class="spinner">
-  <mat-spinner></mat-spinner>
-</div>
-
-<form *ngIf="confirm === false; else confirmMessage" [formGroup]="form" (submit)="onRegister()" class="register-form">
+<div class="wrapper">
+  <h1>Register</h1>
   
-  <div class="form-group group-email">
-    
-    <mat-form-field class="example-full-width">
-      <mat-label>Email</mat-label>
-      
-      <input
-        required
-        matInput
-        formControlName="email"
-        type="email"
-        placeholder="Ex. john@example.com">
-      
-      <mat-icon matSuffix>mail_outline</mat-icon>
-      
-      <mat-error *ngIf="f.email.touched && f.email.errors?.required">This field is required</mat-error>
-      <mat-error *ngIf="f.email.errors?.pattern">Email is invalid</mat-error>
-    
-    </mat-form-field>
-  
+  <div *ngIf="spinner" class="spinner">
+    <mat-spinner></mat-spinner>
   </div>
   
-  <button type="submit"
-          [disabled]="form.invalid"
-          mat-raised-button
-          color="primary"
-          class="register-btn">Register
-  </button>
+  <mat-horizontal-stepper [selectedIndex]="0">
+    <mat-step>
+      <ng-template matStepLabel>Enter email</ng-template>
+    </mat-step>
+    <mat-step [completed]="false">
+      <ng-template matStepLabel>Enter password</ng-template>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+    </mat-step>
+  </mat-horizontal-stepper>
+  
+  <form *ngIf="confirm === false; else confirmMessage" [formGroup]="form" (submit)="onRegister()" class="register-form">
+    
+    <div class="form-group group-email">
+      
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        
+        <input
+          required
+          matInput
+          formControlName="email"
+          type="email"
+          placeholder="Ex. john@example.com">
+        
+        <mat-icon matSuffix>mail_outline</mat-icon>
+        
+        <mat-error *ngIf="f.email.touched && f.email.errors?.required">This field is required</mat-error>
+        <mat-error *ngIf="f.email.errors?.pattern">Email is invalid</mat-error>
+      
+      </mat-form-field>
+    
+    </div>
+    
+    <button type="submit"
+            [disabled]="form.invalid"
+            mat-raised-button
+            color="primary"
+            class="register-btn">Register
+    </button>
+  
+  </form>
+  
+  <ng-template #confirmMessage>
+    <h3 class="register-message">Congratulations, You are almost there...</h3>
+    <p class="register-message">Your account with ({{email}}) has been successfully created!</p>
+    <p class="register-message">Please check your inbox. An confirmation email is on the way!</p>
+  </ng-template>
 
-</form>
-
-<ng-template #confirmMessage>
-  <h3>Congratulations!</h3>
-  <h3>Your account has been created!</h3>
-  <h3>Please check you Inbox to confirm you email ({{email}})</h3>
-</ng-template>
+</div>

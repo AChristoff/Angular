@@ -26,7 +26,7 @@ body {
   padding-bottom: 0 !important; }
   .mat-menu-content:not(:empty) .mat-menu-item:hover:not([disabled]) {
     background: rgba(103, 58, 183, 0.15);
-    color: #673ab7; }
+    color: #673AB7; }
 
 .spinner {
   position: absolute;
@@ -39,5 +39,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center; }
+
+mat-horizontal-stepper {
+  width: 70%;
+  margin: 0 auto; }
 
 /*# sourceMappingURL=styles.css.map */
