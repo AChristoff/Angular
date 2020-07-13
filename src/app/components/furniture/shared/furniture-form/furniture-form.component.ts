@@ -27,6 +27,7 @@ export class FurnitureFormComponent implements OnInit {
   }
 
   editFurniture() {
+    console.log(this.form.value);
     this.furnitureService.editFurniture(this.form.value, this.id).subscribe(() => {
       this.router.navigate(['/furniture/user']);
     });

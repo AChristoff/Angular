@@ -9,7 +9,7 @@ const getAllUrl = 'http://localhost:3000/blog/posts/all';
 const getSingleUrl = 'http://localhost:3000/blog/post/';
 const getUserFurnitureUrl = 'http://localhost:3000/blog/posts';
 const deleteUrl = 'http://localhost:3000/furniture/delete/';
-const editUrl = 'http://localhost:3000/furniture/edit/';
+const editUrl = 'http://localhost:3000/blog/post/edit/';
 
 @Injectable({
   providedIn: 'root'
