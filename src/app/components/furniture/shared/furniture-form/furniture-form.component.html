@@ -1,35 +1,89 @@
 <form [formGroup]="form"
       (submit)="action === 'create' ? createFurniture() : editFurniture()">
-  <div class="row space-top">
+  
+  <div class="form-group group-name">
     
-    <div class="col-md-4">
+    <mat-form-field class="example-full-width">
+      <mat-label>Name</mat-label>
       
-      <div class="form-group">
-        <label class="form-control-label" for="title">Title</label>
-        <input class="form-control" id="title" formControlName="title" type="text">
-      </div>
-      <div class="alert alert-danger" *ngIf="f.title.touched && f.title.errors?.required">This field is required</div>
-      <div class="alert alert-danger" *ngIf="f.title.errors?.minlength">Length must be at least {{ f.title.errors.minlength.requiredLength }} chars!</div>
+      <input
+        required
+        matInput
+        formControlName="title"
+        type="text"
+        placeholder="Ex. Milo">
       
-      <div class="form-group has-success">
-        <label class="form-control-label" for="subtitle">Subtitle</label>
-        <input class="form-control is-valid" id="subtitle" formControlName="subtitle" type="text">
-      </div>
-      <div class="alert alert-danger" *ngIf="f.subtitle.touched && f.subtitle.errors?.required">This field is required</div>
-      
-      <div class="form-group">
-        <label class="form-control-label" for="content">Content</label>
-        <input class="form-control" id="content" formControlName="content" type="text">
-      </div>
-      <div class="alert alert-danger" *ngIf="f.content.touched && f.content.errors?.required">This field is required</div>
-      
-      <div class="form-group">
-        <label class="form-control-label" for="new-image">Image</label>
-        <input class="form-control" id="new-image" formControlName="image" type="text">
-      </div>
-      <div class="alert alert-danger" *ngIf="f.image.touched && f.image.errors?.required">This field is required</div>
-      
-      <button type="submit" class="btn btn-primary" [disabled]="form.invalid">{{action}}</button>
-    </div>
+      <mat-error *ngIf="f.title.touched && f.title.errors?.required">This field is required</mat-error>
+      <mat-error *ngIf="f.title.errors?.minlength">Length must be at least {{ f.title.errors.minlength.requiredLength }} chars!</mat-error>
+    
+    </mat-form-field>
+  
   </div>
+  
+  
+  <div class="form-group group-breeds">
+    
+    <mat-form-field class="example-full-width">
+      <mat-label>Breeds</mat-label>
+      
+      <input
+        required
+        matInput
+        formControlName="subtitle"
+        type="text"
+        placeholder="Ex. Beagle">
+      
+      <mat-error *ngIf="f.subtitle.touched && f.subtitle.errors?.required">This field is required</mat-error>
+    
+    </mat-form-field>
+  
+  </div>
+  
+  <div class="form-group group-image">
+    
+    <mat-form-field class="example-full-width">
+      <mat-label>Picture</mat-label>
+      
+      <input
+        required
+        matInput
+        formControlName="image"
+        type="text"
+        placeholder="">
+      
+      <mat-error *ngIf="f.image.touched && f.image.errors?.required">This field is required</mat-error>
+    
+    </mat-form-field>
+  
+  </div>
+  
+  
+  <div class="form-group group-description">
+    
+    <mat-form-field class="example-full-width">
+      <mat-label>Description</mat-label>
+      
+      <textarea
+        required
+        matInput
+        rows="5"
+        formControlName="content"
+        type="text"
+        placeholder="Ex. The beagle is a breed of small hound that...">
+          </textarea>
+      
+      <mat-error *ngIf="f.content.touched && f.content.errors?.required">This field is required</mat-error>
+    
+    </mat-form-field>
+  
+  </div>
+  
+  
+  <button type="submit"
+          [disabled]="form.invalid"
+          mat-raised-button
+          color="primary"
+          class="btn create-btn">{{action | titlecase}}
+  </button>
+
 </form>

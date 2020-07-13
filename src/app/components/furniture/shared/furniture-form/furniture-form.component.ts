@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-furniture-form',
   templateUrl: './furniture-form.component.html',
-  styleUrls: ['./furniture-form.component.css']
+  styleUrls: ['./furniture-form.component.scss']
 })
 export class FurnitureFormComponent implements OnInit {
   @Input() form: FormGroup;
