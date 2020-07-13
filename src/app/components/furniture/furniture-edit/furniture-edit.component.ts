@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {FurnitureService} from '../../../core/services/furniture.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Furniture} from '../../shared/models/furniture';
+import {Posts} from '../../shared/models/furniture';
 
 @Component({
   selector: 'app-furniture-edit',
@@ -10,7 +10,7 @@ import {Furniture} from '../../shared/models/furniture';
   styleUrls: ['./furniture-edit.component.css']
 })
 export class FurnitureEditComponent implements OnInit {
-  furniture: Furniture;
+  furniture: Posts;
   form: FormGroup;
   action: string;
   id: string;

@@ -15,7 +15,7 @@
       </li>
       
       <li *ngIf="authService.isAuthenticated()" appNavDropdown class="nav-item dropdown">
-        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
         <mat-menu #menu="matMenu">
           <button class="dropdown-item" routerLink="/furniture/all" mat-menu-item>All Dogs</button>
           <button class="dropdown-item" routerLink="/furniture/user" mat-menu-item>My Dogs</button>
@@ -24,7 +24,7 @@
       </li>
   
       <li *ngIf="authService.isAuthenticated()" class="nav-item">
-        <button mat-button class="nav-link" (click)="logout()">Logout</button>
+        <button mat-button class="nav-link" (click)="logout()"><mat-icon>exit_to_app</mat-icon></button>
       </li>
     
     </ul>

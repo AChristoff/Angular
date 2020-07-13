@@ -5,9 +5,9 @@ import {Observable} from 'rxjs';
 import {Posts} from '../../components/shared/models/furniture';
 
 const createUrl = 'http://localhost:3000/blog/post/create';
-const getAllUrl = 'http://localhost:3000/blog/posts';
+const getAllUrl = 'http://localhost:3000/blog/posts/all';
 const getSingleUrl = 'http://localhost:3000/blog/post/';
-const getUserFurnitureUrl = 'http://localhost:3000/furniture/user';
+const getUserFurnitureUrl = 'http://localhost:3000/blog/posts';
 const deleteUrl = 'http://localhost:3000/furniture/delete/';
 const editUrl = 'http://localhost:3000/furniture/edit/';
 
