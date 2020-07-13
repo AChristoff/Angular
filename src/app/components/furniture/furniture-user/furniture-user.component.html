@@ -2,17 +2,12 @@
   
   <div class="row space-top">
     <div class="col-md-12">
-      <h1>Profile Page</h1>
-      <p>Listing your furniture.</p>
+      <h1>My dogs</h1>
     </div>
   </div>
   
   <div class="wrapper">
-    <app-furniture-card
-      [furnitureInfo$]="userFurniture$"
-      [isEdit]="true"
-      (furnitureChange)="deleteFurniture($event)">
-    </app-furniture-card>
+    <app-furniture-card [furnitureInfo$]="userFurniture$" [isEdit]="true" (furnitureChange)="deleteFurniture($event)" class="cards"></app-furniture-card>
   </div>
 
 </div>

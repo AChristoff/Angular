@@ -11,6 +11,11 @@ nav {
       height: 100%;
       list-style: none;
 
+      &.username {
+        display: flex;
+        align-items: center;
+      }
+
       button.mat-button {
         height: 100%;
         font-size: 1em;

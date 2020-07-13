@@ -8,6 +8,9 @@ nav {
     nav ul li {
       height: 100%;
       list-style: none; }
+      nav ul li.username {
+        display: flex;
+        align-items: center; }
       nav ul li button.mat-button {
         height: 100%;
         font-size: 1em;
