@@ -6,7 +6,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-create-furniture',
   templateUrl: './create-furniture.component.html',
-  styleUrls: ['./create-furniture.component.css']
+  styleUrls: ['./create-furniture.component.scss']
 })
 export class CreateFurnitureComponent implements OnInit {
 
@@ -21,13 +21,10 @@ export class CreateFurnitureComponent implements OnInit {
   ngOnInit() {
     this.action = 'create';
     this.form = this.fb.group({
-      make: ['', [Validators.required, Validators.minLength(4)]],
-      model: ['', [Validators.required, Validators.minLength(4)]],
-      year: ['', [Validators.required, Validators.min(1950), Validators.max(2050)]],
-      description: ['', [Validators.required, Validators.minLength(10)]],
-      price: ['', [Validators.required, Validators.min(0)]],
+      title: ['', [Validators.required, Validators.minLength(4)]],
+      subtitle: ['', [Validators.required, Validators.minLength(4)]],
+      content: ['', [Validators.required, Validators.minLength(10)]],
       image: ['', [Validators.required]],
-      material: ['', [Validators.nullValidator]],
     });
   }
 }

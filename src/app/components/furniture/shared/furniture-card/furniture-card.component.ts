@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Observable} from 'rxjs';
-import {Furniture} from '../../../shared/models/furniture';
+import {Posts} from '../../../shared/models/furniture';
 
 @Component({
   selector: 'app-furniture-card',
@@ -9,7 +9,7 @@ import {Furniture} from '../../../shared/models/furniture';
 })
 export class FurnitureCardComponent implements OnInit {
 
-  @Input() furnitureInfo$: Observable<Furniture[]>;
+  @Input() furnitureInfo$: Observable<Posts[]>;
   @Input() isEdit: boolean;
   @Output() furnitureChange = new EventEmitter<string>();
 
@@ -17,6 +17,7 @@ export class FurnitureCardComponent implements OnInit {
   }
 
   ngOnInit() {
+    console.log(this.furnitureInfo$);
   }
 
   emitId(id) {

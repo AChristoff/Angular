@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Furniture} from '../../shared/models/furniture';
+import {Posts} from '../../shared/models/furniture';
 import {FurnitureService} from '../../../core/services/furniture.service';
 import {Observable} from 'rxjs';
 
@@ -10,7 +10,7 @@ import {Observable} from 'rxjs';
 })
 export class FurnitureAllComponent implements OnInit {
 
-  furniture$: Observable<Furniture[]>;
+  furniture$: Observable<Posts[]>;
 
   constructor(private furnitureService: FurnitureService) {
   }

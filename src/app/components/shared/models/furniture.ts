@@ -1,10 +1,7 @@
-export interface Furniture {
+export interface Posts {
   _id: string;
-  make: string;
-  model: string;
-  year: number;
-  description: string;
-  price: number;
+  title: string;
+  subtitle: string;
+  content: string;
   image: string;
-  material: string;
 }

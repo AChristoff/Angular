@@ -1,13 +1,13 @@
 import {Injectable} from '@angular/core';
 import {Resolve, ActivatedRouteSnapshot, RouterStateSnapshot} from '@angular/router';
-import {Furniture} from '../../components/shared/models/furniture';
+import {Posts} from '../../components/shared/models/furniture';
 import {FurnitureService} from '../services/furniture.service';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class SingleFurnitureResolver implements Resolve<Furniture> {
+export class SingleFurnitureResolver implements Resolve<Posts> {
 
   constructor(private furnitureService: FurnitureService) {
   }

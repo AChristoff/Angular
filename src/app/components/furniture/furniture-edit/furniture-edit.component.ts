@@ -25,13 +25,10 @@ export class FurnitureEditComponent implements OnInit {
     this.action = 'edit';
     this.furniture = this.route.snapshot.data['furnitureData'];
     this.form = this.fb.group({
-      make: [this.furniture.make, [Validators.required, Validators.minLength(4)]],
-      model: [this.furniture.model, [Validators.required, Validators.minLength(4)]],
-      year: [this.furniture.year, [Validators.required, Validators.min(1950), Validators.max(2050)]],
-      description: [this.furniture.description, [Validators.required, Validators.minLength(10)]],
-      price: [this.furniture.price, [Validators.required, Validators.min(0)]],
-      image: [this.furniture.image, [Validators.required]],
-      material: [this.furniture.material, [Validators.nullValidator]],
+      title: ['', [Validators.required, Validators.minLength(4)]],
+      subtitle: ['', [Validators.required, Validators.minLength(4)]],
+      content: ['', [Validators.required, Validators.minLength(10)]],
+      image: ['', [Validators.required]],
     });
 
     this.route.params.subscribe((data) => {

@@ -1,15 +1,15 @@
-<div class="card-wrapper" *ngFor="let f of furnitureInfo$ | async">
+<div class="card-wrapper" *ngFor="let f of (furnitureInfo$ | async)?.posts">
   <mat-card class="card">
     
     <mat-card-header>
-      <img mat-card-image src="{{f.image}}" alt="{{f.make}}">
+      <img mat-card-image src="{{f.image}}" alt="{{f.title}}">
     </mat-card-header>
     
     
     <mat-card-content>
-      <mat-card-title>{{f.make}}</mat-card-title>
-      <mat-card-subtitle>{{f.model}}</mat-card-subtitle>
-      <p>{{f.description | slice:0:71}}...</p>
+      <mat-card-title>{{f.title}}</mat-card-title>
+      <mat-card-subtitle>{{f.subtitle}}</mat-card-subtitle>
+      <p>{{f.content | slice:0:71}}...</p>
     </mat-card-content>
     
     <mat-card-actions>

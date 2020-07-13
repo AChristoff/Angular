@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {Furniture} from '../../shared/models/furniture';
+import {Posts} from '../../shared/models/furniture';
 
 @Component({
   selector: 'app-furniture-details',
@@ -8,12 +8,12 @@ import {Furniture} from '../../shared/models/furniture';
   styleUrls: ['./furniture-details.component.css']
 })
 export class FurnitureDetailsComponent implements OnInit {
-  furniture: Furniture;
+  furniture: Posts;
 
   constructor(private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.furniture = this.route.snapshot.data['furnitureData'];
+    this.furniture = this.route.snapshot.data['furnitureData']['post'];
   }
 }

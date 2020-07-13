@@ -1,14 +1,15 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Furniture} from '../../components/shared/models/furniture';
-import {Observable} from 'rxjs';
 
-const createUrl = 'http://localhost:5000/furniture/create';
-const getAllUrl = 'http://localhost:5000/furniture/all';
-const getSingleUrl = 'http://localhost:5000/furniture/details/';
-const getUserFurnitureUrl = 'http://localhost:5000/furniture/user';
-const deleteUrl = 'http://localhost:5000/furniture/delete/';
-const editUrl = 'http://localhost:5000/furniture/edit/';
+import {Observable} from 'rxjs';
+import {Posts} from '../../components/shared/models/furniture';
+
+const createUrl = 'http://localhost:3000/blog/post/create';
+const getAllUrl = 'http://localhost:3000/blog/posts';
+const getSingleUrl = 'http://localhost:3000/blog/post/';
+const getUserFurnitureUrl = 'http://localhost:3000/furniture/user';
+const deleteUrl = 'http://localhost:3000/furniture/delete/';
+const editUrl = 'http://localhost:3000/furniture/edit/';
 
 @Injectable({
   providedIn: 'root'
@@ -25,16 +26,16 @@ export class FurnitureService {
     return this.http.put(editUrl + id, data);
   }
 
-  getAllFurniture(): Observable<Furniture[]> {
-    return this.http.get<Furniture[]>(getAllUrl);
+  getAllFurniture(): Observable<Posts[]> {
+    return this.http.get<Posts[]>(getAllUrl);
   }
 
-  getFurnitureById(id): Observable<Furniture> {
-    return this.http.get<Furniture>(getSingleUrl + id);
+  getFurnitureById(id): Observable<Posts> {
+    return this.http.get<Posts>(getSingleUrl + id);
   }
 
-  getUserFurniture(): Observable<Furniture[]> {
-    return this.http.get<Furniture[]>(getUserFurnitureUrl);
+  getUserFurniture(): Observable<Posts[]> {
+    return this.http.get<Posts[]>(getUserFurnitureUrl);
   }
 
   deleteFurniture(id) {
