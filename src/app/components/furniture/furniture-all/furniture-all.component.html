@@ -3,10 +3,29 @@
   <div class="row space-top">
     <div class="col-md-12">
       <h1>Welcome to Dogster gallery</h1>
-      <p>Search:</p>
       <form #form="ngForm" (ngSubmit)="search()">
-        <input ngModel required name="query" class="form-control input-lg" type="text" placeholder="Search" aria-label="Search">
-        <button [disabled]="form.invalid" class="btn btn-secondary my-2" type="submit">Search</button>
+        
+        <mat-form-field class="example-full-width">
+          <mat-label>Search</mat-label>
+          
+          <input
+            required
+            matInput
+            ngModel
+            name="query"
+            placeholder=""
+            type="text">
+          
+          <button
+            type="submit"
+            [disabled]="form.invalid"
+            mat-icon-button
+            matSuffix>
+            <mat-icon>search</mat-icon>
+          </button>
+        
+        </mat-form-field>
+      
       </form>
     </div>
   </div>
