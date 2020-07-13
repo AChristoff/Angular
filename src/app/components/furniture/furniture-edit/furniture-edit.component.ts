@@ -7,7 +7,7 @@ import {Posts} from '../../shared/models/furniture';
 @Component({
   selector: 'app-furniture-edit',
   templateUrl: './furniture-edit.component.html',
-  styleUrls: ['./furniture-edit.component.css']
+  styleUrls: ['./furniture-edit.component.scss']
 })
 export class FurnitureEditComponent implements OnInit {
   furniture: Posts;

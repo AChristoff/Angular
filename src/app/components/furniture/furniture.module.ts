@@ -6,7 +6,7 @@ import {CreateFurnitureComponent} from './create-furniture/create-furniture.comp
 import {FurnitureDetailsComponent} from './furniture-details/furniture-details.component';
 import {FurnitureUserComponent} from './furniture-user/furniture-user.component';
 import {FurnitureEditComponent} from './furniture-edit/furniture-edit.component';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {FurnitureService} from '../../core/services/furniture.service';
 import {RouterModule} from '@angular/router';
 import {SingleFurnitureResolver} from '../../core/resolvers/single-furniture.resolver';
@@ -27,6 +27,7 @@ import {MaterialModule} from '../shared/material.module';
       {path: 'details/:id', component: FurnitureDetailsComponent, resolve: {furnitureData: SingleFurnitureResolver}},
       {path: 'user', component: FurnitureUserComponent},
     ]),
+    FormsModule,
   ],
   declarations: [
     FurnitureAllComponent,
