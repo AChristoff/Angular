@@ -14,7 +14,8 @@ export class FurnitureAllComponent implements OnInit {
   @ViewChild('form') searchForm: NgForm;
   furniture$: Observable<Posts[]>;
 
-  constructor(private furnitureService: FurnitureService, private router: Router) {
+  constructor(
+    private furnitureService: FurnitureService, private router: Router) {
   }
 
   ngOnInit() {

@@ -11,7 +11,7 @@ import {FurnitureService} from '../../core/services/furniture.service';
 import {RouterModule} from '@angular/router';
 import {SingleFurnitureResolver} from '../../core/resolvers/single-furniture.resolver';
 import {FurnitureCardComponent} from './shared/furniture-card/furniture-card.component';
-import { FurnitureFormComponent } from './shared/furniture-form/furniture-form.component';
+import {FurnitureFormComponent} from './shared/furniture-form/furniture-form.component';
 import {MaterialModule} from '../shared/material.module';
 
 @NgModule({
