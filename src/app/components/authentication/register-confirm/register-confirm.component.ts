@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
 import {CustomValidationService} from '../../../core/services/custom-validation.service';
 import {AuthService} from '../../../core/services/auth.service';
@@ -64,13 +64,19 @@ export class RegisterConfirmComponent implements OnInit {
       name: this.form.controls.username.value,
       password: this.form.controls.password.value,
     };
-    this.authService.registerConfirm(regData, this.token).subscribe((data) => {
-      this.spinner = false;
-      this.currentStep = 2;
-      localStorage.setItem('token', data['token']);
-      localStorage.setItem('username', data['username']);
-    });
+    this.authService.registerConfirm(regData, this.token).subscribe(
+      (data) => {
+        this.spinner = false;
+        this.currentStep = 2;
+        localStorage.setItem('token', data['token']);
+        localStorage.setItem('username', data['username']);
+      },
+      (error) => {
+        this.spinner = false;
+        console.log(error);
+      });
   }
+
   onDone() {
     this.router.navigate(['/home']);
   }

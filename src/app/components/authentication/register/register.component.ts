@@ -48,10 +48,15 @@ export class RegisterComponent implements OnInit {
     };
     this.authService
       .register(regData)
-      .subscribe((data) => {
-        this.spinner = false;
-        this.confirm = true;
-      });
+      .subscribe(
+        (data) => {
+          this.spinner = false;
+          this.confirm = true;
+        },
+        (error) => {
+          this.spinner = false;
+          console.log(error);
+        });
   }
 
   get f() {

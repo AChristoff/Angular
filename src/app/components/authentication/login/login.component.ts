@@ -48,14 +48,18 @@ export class LoginComponent implements OnInit {
       email: this.form.controls.email.value,
       password: this.form.controls.password.value,
     };
-    console.log(logData);
-    this.authService.login(logData).subscribe((data) => {
-      console.log(data);
-      localStorage.setItem('token', data['token']);
-      localStorage.setItem('username', data['username']);
-      this.spinner = false;
-      this.router.navigate(['/home']);
-    });
+    this.authService.login(logData).subscribe(
+      (data) => {
+        console.log(data);
+        this.spinner = false;
+        localStorage.setItem('token', data['token']);
+        localStorage.setItem('username', data['username']);
+        this.router.navigate(['/home']);
+      },
+      (error) => {
+        this.spinner = false;
+        console.log(error);
+      });
   }
 
   get f() {
